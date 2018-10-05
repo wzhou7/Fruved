@@ -17,6 +17,7 @@ freq <- function(x){
     return(y)
 }
 
+# this is another change
 Pyramid <- function(x,FVfreq){
     for(s in 1:nrow(x)){
         for(t in 1:ncol(x)){
