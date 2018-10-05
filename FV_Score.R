@@ -1,3 +1,4 @@
+# this is a change
 freq <- function(x){
     if(is.na(x)) {y <- 0}
     if(!is.na(x)){
