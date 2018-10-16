@@ -14,5 +14,5 @@ This package consists of a few survey scoring tools in the general field of nutr
 
 ## Notes in the scoring of instruments
 
-Markup: * DSQ
-		* afaf
+* DSQ
+	* afaf
