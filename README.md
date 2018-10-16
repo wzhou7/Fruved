@@ -4,6 +4,16 @@ This package consists of a few survey scoring tools in the general field of nutr
 
 ## Which Instruments Are Included?
 
-* NCI Fruit and Vegetables
+* NCI Fruit and Vegetables (NCIFV)
 
-* Pit
+* Cohen's Stress (STRESS)
+
+* International Physical Activity Questionnaire (IPAQ)
+
+* Dietary Screener Questionnaires (DSQ)
+
+## Notes in the scoring of instruments
+
+* DSQ
+
+** aa
