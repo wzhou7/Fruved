@@ -1,4 +1,20 @@
+require(RCurl)
+Dsqcertyp <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/Dsqcertyp1.csv"))
+Dsqcertyp$Name <- trim(Dsqcertyp$Name)
+Cereal <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/cereal.attributes.by.foodcode.csv"))
+Cereal$Cereal_Name <- trim(Cereal$Cereal_Name)
+PortionSize <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/portion.size.csv"))
+Coefficients <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/regression.coefficients.csv"))
+
 Score_DSQ <- function(data){
+  
+  Dsqcertyp <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/Dsqcertyp1.csv"))
+  Dsqcertyp$Name <- trim(Dsqcertyp$Name)
+  Cereal <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/cereal.attributes.by.foodcode.csv"))
+  Cereal$Cereal_Name <- trim(Cereal$Cereal_Name)
+  PortionSize <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/portion.size.csv"))
+  Coefficients <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/regression.coefficients.csv"))
+  
   data$Dsqcertyp1 <- as.character(data$Dsqcertyp1)
   data$Dsqcertyp2 <- as.character(data$Dsqcertyp2)
   #data$gender <- 1 + data$gender
