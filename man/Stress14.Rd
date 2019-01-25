@@ -18,9 +18,7 @@ Stress14(data)
 }
 \details{
   The variable names of the stress survey should be as follows, the ordering does not matter.
-  \begin{itemize}
-    \item a
-  \end{itemize}
+  \item{a}{bc}
 }
 \value{
   ~Describe the value returned
