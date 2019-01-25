@@ -12,7 +12,7 @@ Stress14(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item xyz
+  \item{xyz}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
