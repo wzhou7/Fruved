@@ -10,7 +10,7 @@ This package consists of a few survey scoring tools in the general field of nutr
 
 * International Physical Activity Questionnaire (IPAQ)
 
-* Dietary Screener Questionnaires (DSQ)
+* BMI
 
 ## Notes in the scoring of instruments
 
