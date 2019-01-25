@@ -20,6 +20,7 @@ Stress14(data)
   The data should name the stress survey variables as follows (the ordering does not matter).
   \describe{
     \item{\code{STRESS_5}}{abc}
+    \item{\code{STRESS_1}}{def}
   }
 }
 %\details{}
