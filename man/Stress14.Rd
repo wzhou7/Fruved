@@ -2,22 +2,25 @@
 \alias{Stress14}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-score
+Scoring of the ``Stress14'' survey
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+The function return the stress score given the data
 }
 \usage{
 Stress14(data)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{abc}{
-    def
+  \item{data}{
+    Your input data containing the responses of the stress survey
   }
 }
 \details{
- ggg
+  The variable names of the stress survey should be as follows, the ordering does not matter.
+  \begin{itemize}
+    \item a
+  \end{itemize}
 }
 \value{
   ~Describe the value returned
@@ -29,7 +32,7 @@ Stress14(data)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Wangcheng Yan, Wenjun Zhou
 }
 \note{
 %%  ~~further notes~~
