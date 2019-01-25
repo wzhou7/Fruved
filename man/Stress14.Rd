@@ -19,8 +19,8 @@ Stress14(data)
 \format{
   The data should name the stress survey variables as follows (the ordering does not matter).
   \describe{
-    \item{\code{BMI}}{The response variable.  Body mass index.}
-    \item{\code{School_meal}}{Participation of school meal programs (1: Yes, 0: No)}
+    \item{BMI:}{The response variable.  Body mass index.}
+    \item{School_meal:}{Participation of school meal programs (1: Yes, 0: No)}
   }
 }
 %\details{}
