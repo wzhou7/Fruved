@@ -1,4 +1,5 @@
 require(RCurl)
+trim <- function (x) gsub("^\\s+|\\s+$", "", x)
 Dsqcertyp <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/Dsqcertyp1.csv"))
 Dsqcertyp$Name <- trim(Dsqcertyp$Name)
 Cereal <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/cereal.attributes.by.foodcode.csv"))
@@ -7,14 +8,14 @@ PortionSize <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fr
 Coefficients <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/regression.coefficients.csv"))
 
 Score_DSQ <- function(data){
-  
+
   Dsqcertyp <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/Dsqcertyp1.csv"))
   Dsqcertyp$Name <- trim(Dsqcertyp$Name)
   Cereal <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/cereal.attributes.by.foodcode.csv"))
   Cereal$Cereal_Name <- trim(Cereal$Cereal_Name)
   PortionSize <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/portion.size.csv"))
   Coefficients <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/regression.coefficients.csv"))
-  
+
   data$Dsqcertyp1 <- as.character(data$Dsqcertyp1)
   data$Dsqcertyp2 <- as.character(data$Dsqcertyp2)
   #data$gender <- 1 + data$gender
@@ -36,11 +37,11 @@ Score_DSQ <- function(data){
   data$AGEGRP[data$AGE>=58 & data$AGE<=67] <- 13
   data$AGEGRP[data$AGE>=68 & data$AGE<=77] <- 14
   data$AGEGRP[data$AGE>=78] <- 15
-  
+
   data$agecut[data$AGEGRP>=1 & data$AGEGRP<=5] <- 3
   data$agecut[data$AGEGRP>=6 & data$AGEGRP<=8] <- 4
   data$agecut[data$AGEGRP>=9 & data$AGEGRP<=15] <- 2
-  
+
   # hccerxpd='number of times per day eat hot or cold cereal'
   hccerxpd <- rep(NA,nrow(data))
   hccerxpd[data$Dsqcereal==1] <- 0
@@ -352,7 +353,7 @@ Score_DSQ <- function(data){
   popcornxpd[data$Dsqcorn==8] <- 1
   popcornxpd[data$Dsqcorn==9] <- 2
   summary(factor(popcornxpd))
-  
+
   c1hotcold <- rep(NA,nrow(data))
   c1whgnt <- rep(NA,nrow(data))
   c1sugnt <- rep(NA,nrow(data))
@@ -366,7 +367,7 @@ Score_DSQ <- function(data){
   dtdcer <- rep(NA,nrow(data))
   dtdcer1 <- rep(NA,nrow(data))
   dtdcer2 <- rep(NA,nrow(data))
-  
+
   for(k in 1:nrow(data)){
     x <- data$Dsqcertyp1[k]
     z <- data$Dsqcertyp2[k]
@@ -383,62 +384,62 @@ Score_DSQ <- function(data){
   #if(sum(dtdcer1==0 & dtdcer2>=1)>0){
   #  print("Warn: check your skip logic. Students can answer Dsqcertyp2 without answering Dsqcertyp1")
   #} #to make sure here should be 0
-  
-  hwg1f <- rep(NA,nrow(data))  
-  hwg2f <- rep(NA,nrow(data))  
-  cwg1f <- rep(NA,nrow(data))  
-  cwg2f <- rep(NA,nrow(data))  
-  cwg3f <- rep(NA,nrow(data))  
-  cwg4f <- rep(NA,nrow(data)) 
-  has1f <- rep(NA,nrow(data))  
-  has2f <- rep(NA,nrow(data))  
-  cas1f <- rep(NA,nrow(data))  
-  cas2f <- rep(NA,nrow(data))  
-  cas3f <- rep(NA,nrow(data))  
-  cas4f <- rep(NA,nrow(data)) 
-  hcm1f <- rep(NA,nrow(data))  
-  hcm2f <- rep(NA,nrow(data))  
-  hcm3f <- rep(NA,nrow(data))  
-  ccm1f <- rep(NA,nrow(data))  
-  ccm2f <- rep(NA,nrow(data))  
-  ccm3f <- rep(NA,nrow(data))  
-  ccm4f <- rep(NA,nrow(data)) 
-  hfb1f <- rep(NA,nrow(data))  
-  hfb2f <- rep(NA,nrow(data))  
-  hfb3f <- rep(NA,nrow(data))  
-  cfb1f <- rep(NA,nrow(data))  
-  cfb2f <- rep(NA,nrow(data))  
-  cfb3f <- rep(NA,nrow(data))  
-  cfb4f <- rep(NA,nrow(data)) 
-  
+
+  hwg1f <- rep(NA,nrow(data))
+  hwg2f <- rep(NA,nrow(data))
+  cwg1f <- rep(NA,nrow(data))
+  cwg2f <- rep(NA,nrow(data))
+  cwg3f <- rep(NA,nrow(data))
+  cwg4f <- rep(NA,nrow(data))
+  has1f <- rep(NA,nrow(data))
+  has2f <- rep(NA,nrow(data))
+  cas1f <- rep(NA,nrow(data))
+  cas2f <- rep(NA,nrow(data))
+  cas3f <- rep(NA,nrow(data))
+  cas4f <- rep(NA,nrow(data))
+  hcm1f <- rep(NA,nrow(data))
+  hcm2f <- rep(NA,nrow(data))
+  hcm3f <- rep(NA,nrow(data))
+  ccm1f <- rep(NA,nrow(data))
+  ccm2f <- rep(NA,nrow(data))
+  ccm3f <- rep(NA,nrow(data))
+  ccm4f <- rep(NA,nrow(data))
+  hfb1f <- rep(NA,nrow(data))
+  hfb2f <- rep(NA,nrow(data))
+  hfb3f <- rep(NA,nrow(data))
+  cfb1f <- rep(NA,nrow(data))
+  cfb2f <- rep(NA,nrow(data))
+  cfb3f <- rep(NA,nrow(data))
+  cfb4f <- rep(NA,nrow(data))
+
   for(k in 1:nrow(data)){
     if((dtdcer[k] %in% c(0,1,2)) & !is.na(hccerxpd[k])){
-      hwg1f[k] <- 0  
-      hwg2f[k] <- 0  
-      cwg1f[k] <- 0  
-      cwg2f[k] <- 0  
-      cwg3f[k] <- 0  
-      cwg4f[k] <- 0 
-      has1f[k] <- 0  
-      has2f[k] <- 0  
-      cas1f[k] <- 0  
-      cas2f[k] <- 0  
-      cas3f[k] <- 0  
-      cas4f[k] <- 0 
-      hcm1f[k] <- 0  
-      hcm2f[k] <- 0  
-      hcm3f[k] <- 0  
-      ccm1f[k] <- 0  
-      ccm2f[k] <- 0  
-      ccm3f[k] <- 0  
-      ccm4f[k] <- 0 
-      hfb1f[k] <- 0  
-      hfb2f[k] <- 0  
-      hfb3f[k] <- 0  
-      cfb1f[k] <- 0  
-      cfb2f[k] <- 0  
-      cfb3f[k] <- 0  
-      cfb4f[k] <- 0 
+      hwg1f[k] <- 0
+      hwg2f[k] <- 0
+      cwg1f[k] <- 0
+      cwg2f[k] <- 0
+      cwg3f[k] <- 0
+      cwg4f[k] <- 0
+      has1f[k] <- 0
+      has2f[k] <- 0
+      cas1f[k] <- 0
+      cas2f[k] <- 0
+      cas3f[k] <- 0
+      cas4f[k] <- 0
+      hcm1f[k] <- 0
+      hcm2f[k] <- 0
+      hcm3f[k] <- 0
+      ccm1f[k] <- 0
+      ccm2f[k] <- 0
+      ccm3f[k] <- 0
+      ccm4f[k] <- 0
+      hfb1f[k] <- 0
+      hfb2f[k] <- 0
+      hfb3f[k] <- 0
+      cfb1f[k] <- 0
+      cfb2f[k] <- 0
+      cfb3f[k] <- 0
+      cfb4f[k] <- 0
     }
     if(dtdcer[k]==1 & (data$Dsqcertyp1[k] %in% Dsqcertyp$Number)){
       x <- Dsqcertyp$Name[Dsqcertyp$Number==data$Dsqcertyp1[k]]
@@ -447,21 +448,21 @@ Score_DSQ <- function(data){
       c1sugnt <- Cereal$sugnt[Cereal$Cereal_Name==x]
       c1calcnt <- Cereal$calcnt[Cereal$Cereal_Name==x]
       c1fibnt <- Cereal$fibnt[Cereal$Cereal_Name==x]
-      
+
       if(c1hotcold==2 & c1whgnt==1){cwg1f[k] <- cwg1f[k] + hccerxpd[k]}
       if(c1hotcold==2 & c1whgnt==2){cwg2f[k] <- cwg2f[k] + hccerxpd[k]}
       if(c1hotcold==2 & c1whgnt==3){cwg3f[k] <- cwg3f[k] + hccerxpd[k]}
       if(c1hotcold==2 & c1whgnt==4){cwg4f[k] <- cwg4f[k] + hccerxpd[k]}
       if(c1hotcold==1 & c1whgnt==1){hwg1f[k] <- hwg1f[k] + hccerxpd[k]}
       if(c1hotcold==1 & c1whgnt==2){hwg2f[k] <- hwg2f[k] + hccerxpd[k]}
-      
+
       if(c1hotcold==2 & c1sugnt==1){cas1f[k] <- cas1f[k] + hccerxpd[k]}
       if(c1hotcold==2 & c1sugnt==2){cas2f[k] <- cas2f[k] + hccerxpd[k]}
       if(c1hotcold==2 & c1sugnt==3){cas3f[k] <- cas3f[k] + hccerxpd[k]}
       if(c1hotcold==2 & c1sugnt==4){cas4f[k] <- cas4f[k] + hccerxpd[k]}
       if(c1hotcold==1 & c1sugnt==1){has1f[k] <- has1f[k] + hccerxpd[k]}
       if(c1hotcold==1 & c1sugnt==2){has2f[k] <- has2f[k] + hccerxpd[k]}
-      
+
       if(c1hotcold==2 & c1calcnt==1){ccm1f[k] <- ccm1f[k] + hccerxpd[k]}
       if(c1hotcold==2 & c1calcnt==2){ccm2f[k] <- ccm2f[k] + hccerxpd[k]}
       if(c1hotcold==2 & c1calcnt==3){ccm3f[k] <- ccm3f[k] + hccerxpd[k]}
@@ -469,7 +470,7 @@ Score_DSQ <- function(data){
       if(c1hotcold==1 & c1calcnt==1){hcm1f[k] <- hcm1f[k] + hccerxpd[k]}
       if(c1hotcold==1 & c1calcnt==2){hcm2f[k] <- hcm2f[k] + hccerxpd[k]}
       if(c1hotcold==1 & c1calcnt==3){hcm3f[k] <- hcm3f[k] + hccerxpd[k]}
-      
+
       if(c1hotcold==2 & c1fibnt==1){cfb1f[k] <- cfb1f[k] + hccerxpd[k]}
       if(c1hotcold==2 & c1fibnt==2){cfb2f[k] <- cfb2f[k] + hccerxpd[k]}
       if(c1hotcold==2 & c1fibnt==3){cfb3f[k] <- cfb3f[k] + hccerxpd[k]}
@@ -487,45 +488,45 @@ Score_DSQ <- function(data){
         c1sugnt <- Cereal$sugnt[Cereal$Cereal_Name==x]
         c1calcnt <- Cereal$calcnt[Cereal$Cereal_Name==x]
         c1fibnt <- Cereal$fibnt[Cereal$Cereal_Name==x]
-        
-        
+
+
         s <- Dsqcertyp$Name[Dsqcertyp$Number==z]
         c2hotcold <- unique(Cereal$hotcold[Cereal$Cereal_Name==s])
         c2whgnt <- unique(Cereal$whgnt[Cereal$Cereal_Name==s])
         c2sugnt <- unique(Cereal$sugnt[Cereal$Cereal_Name==s])
         c2calcnt <- unique(Cereal$calcnt[Cereal$Cereal_Name==s])
         c2fibnt <- unique(Cereal$fibnt[Cereal$Cereal_Name==s])
-        
+
         if((c1hotcold==2) & (c1whgnt==1)){cwg1f[k] <- cwg1f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==2) & (c1whgnt==2)){cwg2f[k] <- cwg2f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==2) & (c1whgnt==3)){cwg3f[k] <- cwg3f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==2) & (c1whgnt==4)){cwg4f[k] <- cwg4f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==1) & (c1whgnt==1)){hwg1f[k] <- hwg1f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==1) & (c1whgnt==2)){hwg2f[k] <- hwg2f[k] + 0.75*hccerxpd[k]}
-        
+
         if((c2hotcold==2) & (c2whgnt==1)){cwg1f[k] <- cwg1f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==2) & (c2whgnt==2)){cwg2f[k] <- cwg2f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==2) & (c2whgnt==3)){cwg3f[k] <- cwg3f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==2) & (c2whgnt==4)){cwg4f[k] <- cwg4f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==1) & (c2whgnt==1)){hwg1f[k] <- hwg1f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==1) & (c2whgnt==2)){hwg2f[k] <- hwg2f[k] + 0.25*hccerxpd[k]}
-        
+
         if((c1hotcold==2) & (c1sugnt==1)){cas1f[k] <- cas1f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==2) & (c1sugnt==2)){cas2f[k] <- cas2f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==2) & (c1sugnt==3)){cas3f[k] <- cas3f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==2) & (c1sugnt==4)){cas4f[k] <- cas4f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==1) & (c1sugnt==1)){has1f[k] <- has1f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==1) & (c1sugnt==2)){has2f[k] <- has2f[k] + 0.75*hccerxpd[k]}
-        
+
         if((c2hotcold==2) & (c2sugnt==1)){cas1f[k] <- cas1f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==2) & (c2sugnt==2)){cas2f[k] <- cas2f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==2) & (c2sugnt==3)){cas3f[k] <- cas3f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==2) & (c2sugnt==4)){cas4f[k] <- cas4f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==1) & (c2sugnt==1)){has1f[k] <- has1f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==1) & (c2sugnt==2)){has2f[k] <- has2f[k] + 0.25*hccerxpd[k]}
-        
-        
-        
+
+
+
         if((c1hotcold==2) & (c1calcnt==1)){ccm1f[k] <- ccm1f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==2) & (c1calcnt==2)){ccm2f[k] <- ccm2f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==2) & (c1calcnt==3)){ccm3f[k] <- ccm3f[k] + 0.75*hccerxpd[k]}
@@ -533,7 +534,7 @@ Score_DSQ <- function(data){
         if((c1hotcold==1) & (c1calcnt==1)){hcm1f[k] <- hcm1f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==1) & (c1calcnt==2)){hcm2f[k] <- hcm2f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==1) & (c1calcnt==3)){hcm3f[k] <- hcm3f[k] + 0.75*hccerxpd[k]}
-        
+
         if((c2hotcold==2) & (c2calcnt==1)){ccm1f[k] <- ccm1f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==2) & (c2calcnt==2)){ccm2f[k] <- ccm2f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==2) & (c2calcnt==3)){ccm3f[k] <- ccm3f[k] + 0.25*hccerxpd[k]}
@@ -541,9 +542,9 @@ Score_DSQ <- function(data){
         if((c2hotcold==1) & (c2calcnt==1)){hcm1f[k] <- hcm1f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==1) & (c2calcnt==2)){hcm2f[k] <- hcm2f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==1) & (c2calcnt==3)){hcm3f[k] <- hcm3f[k] + 0.25*hccerxpd[k]}
-        
-        
-        
+
+
+
         if((c1hotcold==2) & (c1fibnt==1)){cfb1f[k] <- cfb1f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==2) & (c1fibnt==2)){cfb2f[k] <- cfb2f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==2) & (c1fibnt==3)){cfb3f[k] <- cfb3f[k] + 0.75*hccerxpd[k]}
@@ -551,7 +552,7 @@ Score_DSQ <- function(data){
         if((c1hotcold==1) & (c1fibnt==1)){hfb1f[k] <- hfb1f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==1) & (c1fibnt==2)){hfb2f[k] <- hfb2f[k] + 0.75*hccerxpd[k]}
         if((c1hotcold==1) & (c1fibnt==3)){hfb3f[k] <- hfb3f[k] + 0.75*hccerxpd[k]}
-        
+
         if((c2hotcold==2) & (c2fibnt==1)){cfb1f[k] <- cfb1f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==2) & (c2fibnt==2)){cfb2f[k] <- cfb2f[k] + 0.25*hccerxpd[k]}
         if((c2hotcold==2) & (c2fibnt==3)){cfb3f[k] <- cfb3f[k] + 0.25*hccerxpd[k]}
@@ -562,7 +563,7 @@ Score_DSQ <- function(data){
       }
     }
   }
-  
+
   ghcerfib1 <- rep(NA,nrow(data))
   ghcerfib2 <- rep(NA,nrow(data))
   ghcerfib3 <- rep(NA,nrow(data))
@@ -644,7 +645,7 @@ Score_DSQ <- function(data){
   sqrtfd3ssb <- rep(NA,nrow(data))
   fd4dairy <- rep(NA,nrow(data))
   sqfd4dairy <- rep(NA,nrow(data))
-  
+
   predfib <- rep(NA,nrow(data))
   predcalc <- rep(NA,nrow(data))
   predsug <- rep(NA,nrow(data))
@@ -654,16 +655,16 @@ Score_DSQ <- function(data){
   predfvl <- rep(NA,nrow(data))
   predfvlnf <- rep(NA,nrow(data))
   predssb <- rep(NA,nrow(data))
-  
+
   for(k in 1:nrow(data)){
     x <- data$gender[k]
     AGEGRP <- NA
     agecut <- NA
     if(!is.na(x) & x %in% c(1,2) & !is.na(data$AGE[k])){
-      
+
       AGEGRP <- data$AGEGRP[k]
       agecut <- data$agecut[k]
-      
+
       for(j in 3:ncol(PortionSize)){
         assign(names(PortionSize)[j],NA)
         assign(names(PortionSize)[j],
@@ -702,8 +703,8 @@ Score_DSQ <- function(data){
       gothveg[k] <- othvegxpd[k] * gp50othveg
       gfrfry[k] <- frfryxpd[k] * gp50frfry
       gtomsc[k] <- tomscxpd[k] * gp50tomsc
-      gsalsa[k] <- salsaxpd[k] * gp50salsa  
-      
+      gsalsa[k] <- salsaxpd[k] * gp50salsa
+
       ghcercalc1[k] <- hcm1f[k] * gp50hcereal
       ghcercalc2[k] <- hcm2f[k] * gp50hcereal
       ghcercalc3[k] <- hcm3f[k] * gp50hcereal
@@ -711,7 +712,7 @@ Score_DSQ <- function(data){
       gccercalc2[k] <- ccm2f[k] * gp50ccereal
       gccercalc3[k] <- ccm3f[k] * gp50ccereal
       gccercalc4[k] <- ccm4f[k] * gp50ccereal
-      
+
       shceraddsug1[k] <- has1f[k] * sp50hcereal
       shceraddsug2[k] <- has2f[k] * sp50hcereal
       scceraddsug1[k] <- cas1f[k] * sp50ccereal
@@ -724,20 +725,20 @@ Score_DSQ <- function(data){
       scookietc[k] <- cakexpd[k] * sp50cookietc
       sdonut[k] <- donutxpd[k] * sp50donut
       ssugincof[k] <- swtctxpd[k] * sp50sugincof
-      scandy[k] <- candyxpd[k] * sp50candy  
-      
+      scandy[k] <- candyxpd[k] * sp50candy
+
       ghcerwg1[k] <- hwg1f[k] * gp50hcereal
       ghcerwg2[k] <- hwg2f[k] * gp50hcereal
       gccerwg1[k] <- cwg1f[k] * gp50ccereal
       gccerwg2[k] <- cwg2f[k] * gp50ccereal
       gccerwg3[k] <- cwg3f[k] * gp50ccereal
       gccerwg4[k] <- cwg4f[k] * gp50ccereal
-      
+
       dcheese[k] <- cheesexpd[k] * dp50cheese
       dpizza[k] <- pizzaxpd[k] * dp50pizza
       dmilk[k] <- milkxpd[k] * dp50milk
       dicecream[k] <- icecrmxpd[k] * dp50icecream
-      
+
       vfrtj[k] <- frtjcxpd[k] * vp50frtj
       vfruit[k] <- fruitxpd[k] * vp50fruit
       vsalad[k] <- saladxpd[k] * vp50salad
@@ -748,64 +749,64 @@ Score_DSQ <- function(data){
       vtomsc[k] <- tomscxpd[k] * vp50tomsc
       vsalsa[k] <- salsaxpd[k] * vp50salsa
       vpizza[k] <- pizzaxpd[k] * vp50pizza
-      
+
       #sum variables then transform;
-      fd8sug[k] <- shceraddsug1[k] + shceraddsug2[k] + scceraddsug1[k] + scceraddsug2[k] + scceraddsug3[k] + scceraddsug4[k] + sicecream[k] + 
+      fd8sug[k] <- shceraddsug1[k] + shceraddsug2[k] + scceraddsug1[k] + scceraddsug2[k] + scceraddsug3[k] + scceraddsug4[k] + sicecream[k] +
         sregsoda[k] + ssportfrdrnk[k] + scookietc[k] + sdonut[k] + ssugincof[k] + scandy[k]
       fd7sug[k] <- sregsoda[k] + ssportfrdrnk[k] + scookietc[k] + sdonut[k] + sicecream[k] + ssugincof[k] + scandy[k]
       btfd8sug[k] <- (fd8sug[k])^(0.33)
       btfd7sug[k] <- (fd7sug[k])^(0.33)
-      
+
       fd10fvl[k] <- vfrtj[k] + vfruit[k] + vsalad[k] + vothpot[k] + vdrbean[k] + vothveg[k] + vfrfry[k] + vtomsc[k] + vsalsa[k] + vpizza[k]
       fd9fvl[k] <- vfrtj[k] + vfruit[k] + vsalad[k] + vothpot[k] + vdrbean[k] + vothveg[k] + vtomsc[k] + vsalsa[k] + vpizza[k]
       sqrtfd10fvl[k] <- sqrt(fd10fvl[k])
       sqrtfd9fvl[k] <- sqrt(fd9fvl[k])
-      
+
       fd3ssb[k] <- sregsoda[k] + ssportfrdrnk[k] + ssugincof[k]
       sqrtfd3ssb[k] <- sqrt(fd3ssb[k])
-      
+
       fd4dairy[k] <- dcheese[k] + dpizza[k] + dmilk[k] + dicecream[k]
       sqfd4dairy[k] <- sqrt(fd4dairy[k])
-      
+
       ###using regression coefficients###
-      predfib[k] <- (bintercept +  (ghcerfib1[k] * bghcerfib1) + (ghcerfib2[k] * bghcerfib2) + (ghcerfib3[k] * bghcerfib3) + (gccerfib1[k] * bgccerfib1) +  
-                       (gccerfib2[k] * bgccerfib2) +  (gccerfib3[k] * bgccerfib3) +  (gccerfib4[k] * bgccerfib4) +  (gwhgbrd[k] * bgwhgbrd) + (gbrownrice[k] * bgbrownrice) + 
-                       (gcheese[k] * bgcheese) +  (gpizza[k] * bgpizza) +  (gmilk[k] * bgmilk) +  (gicecream[k] * bgicecream) +  (gpopcorn[k] * bgpopcorn) + 
-                       (gregsoda[k] * bgregsoda) +  (gsportfrdrnk[k] * bgsportfrdrnk) +  (gcookietc[k] * bgcookietc) +  (gdonut[k] * bgdonut) +  (gsugincof[k] * bgsugincof) +  (gcandy[k] * bgcandy) + 
+      predfib[k] <- (bintercept +  (ghcerfib1[k] * bghcerfib1) + (ghcerfib2[k] * bghcerfib2) + (ghcerfib3[k] * bghcerfib3) + (gccerfib1[k] * bgccerfib1) +
+                       (gccerfib2[k] * bgccerfib2) +  (gccerfib3[k] * bgccerfib3) +  (gccerfib4[k] * bgccerfib4) +  (gwhgbrd[k] * bgwhgbrd) + (gbrownrice[k] * bgbrownrice) +
+                       (gcheese[k] * bgcheese) +  (gpizza[k] * bgpizza) +  (gmilk[k] * bgmilk) +  (gicecream[k] * bgicecream) +  (gpopcorn[k] * bgpopcorn) +
+                       (gregsoda[k] * bgregsoda) +  (gsportfrdrnk[k] * bgsportfrdrnk) +  (gcookietc[k] * bgcookietc) +  (gdonut[k] * bgdonut) +  (gsugincof[k] * bgsugincof) +  (gcandy[k] * bgcandy) +
                        (gfrtj[k] * bgfrtj) +  (gfruit[k] * bgfruit)  +  (gsalad[k] * bgsalad) + (gothpot[k] * bgothpot) +  (gdrbean[k] * bgdrbean) +
                        (gothveg[k] * bgothveg) +  (gfrfry[k] * bgfrfry) +  (gtomsc[k] * bgtomsc) +  (gsalsa[k] * bgsalsa) ) ^ 4
-      
-      
-      predcalc[k] <- (cintercept + (ghcercalc1[k] * cghcercalc1) + (ghcercalc2[k] * cghcercalc2) +  (ghcercalc3[k] * cghcercalc3) +  (gccercalc1[k] * cgccercalc1) +  
-                        (gccercalc2[k] * cgccercalc2) +  (gccercalc3[k] * cgccercalc3) +  (gccercalc4[k] * cgccercalc4) +  (gwhgbrd[k] * cgwhgbrd) + (gbrownrice[k] * cgbrownrice) + 
+
+
+      predcalc[k] <- (cintercept + (ghcercalc1[k] * cghcercalc1) + (ghcercalc2[k] * cghcercalc2) +  (ghcercalc3[k] * cghcercalc3) +  (gccercalc1[k] * cgccercalc1) +
+                        (gccercalc2[k] * cgccercalc2) +  (gccercalc3[k] * cgccercalc3) +  (gccercalc4[k] * cgccercalc4) +  (gwhgbrd[k] * cgwhgbrd) + (gbrownrice[k] * cgbrownrice) +
                         (gcheese[k] * cgcheese) +  (gpizza[k] * cgpizza) +  (gmilk[k] * cgmilk) +  (gicecream[k] * cgicecream) + (gpopcorn[k] * cgpopcorn) +
-                        (gregsoda[k] * cgregsoda) +  (gsportfrdrnk[k] * cgsportfrdrnk) +  (gcookietc[k] * cgcookietc) +  (gdonut[k] * cgdonut) +  (gsugincof[k] * cgsugincof) +  (gcandy[k] * cgcandy) + 
+                        (gregsoda[k] * cgregsoda) +  (gsportfrdrnk[k] * cgsportfrdrnk) +  (gcookietc[k] * cgcookietc) +  (gdonut[k] * cgdonut) +  (gsugincof[k] * cgsugincof) +  (gcandy[k] * cgcandy) +
                         (gfrtj[k] * cgfrtj) +  (gfruit[k] * cgfruit) +  (gsalad[k] * cgsalad) +  (gothpot[k] * cgothpot) +  (gdrbean[k] * cgdrbean) +
                         (gothveg[k] * cgothveg) +  (gfrfry[k] * cgfrfry) +  (gtomsc[k] * cgtomsc) +  (gsalsa[k] * cgsalsa) ) ^ 4
-      
+
       predsug[k] <- (wintercept + (wbeta1 * btfd8sug[k] ) )^3
-      
-      
+
+
       predsugnc[k] <- (sintercept + (sbeta1 * btfd7sug[k] ) )^3
-      
-      
+
+
       predwhgrn[k] <- (gintercept + (ghcerwg1[k] * gghcerwg1) + (ghcerwg2[k] * gghcerwg2) + (gccerwg1[k] * ggccerwg1) + (gccerwg2[k] * ggccerwg2)
                        + (gccerwg3[k] * ggccerwg3) + (gccerwg4[k] * ggccerwg4) + (gwhgbrd[k] * ggwhgbrd) + (gpopcorn[k] * ggpopcorn) + (gbrownrice[k] * ggbrownrice) ) ^2
-      
-      
+
+
       preddairy[k] <-  (dintercept + (dbeta1 * sqfd4dairy[k] ) )^2
-      
-      
+
+
       predfvl[k] <-  (vintercept + (vbeta1 * sqrtfd10fvl[k] ) )^2
-      
-      
+
+
       predfvlnf[k] <-  (nintercept + (nbeta1 * sqrtfd9fvl[k] ) )^2
-      
-      
+
+
       predssb[k] <-  (xintercept + (xbeta1 * sqrtfd3ssb[k]) ) ^2
     }
   }
-  
+
   out <- as.data.frame(matrix(NA,nrow=nrow(data),ncol=9))
   names(out) <- c("predfib","predcalc","predsug","predsugnc","predwhgrn","preddairy","predfvl","predfvlnf","predssb")
   out$predfib <- predfib
