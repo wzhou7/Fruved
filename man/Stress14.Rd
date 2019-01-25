@@ -14,7 +14,7 @@ PSS-14 scores are obtained by reversing the scores on the seven positive items, 
 Items STRESS_1, STRESS_6, STRESS_7, STRESS_8, STRESS_10, STRESS_11, and STRESS_14 are the positively stated items.
 }
 \usage{
-Stress14(data)
+Score_Stress(data)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

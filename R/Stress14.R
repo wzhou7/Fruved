@@ -9,7 +9,7 @@ StressItem <- function(x,rev){
   return(x)
 }
 
-Stress14 <- function(data){
+Score_Stress <- function(data){
   index <- paste0("STRESS_",c(5,3,2,1,6:15))
   df <- data[,index]
   Stress_Score <- StressItem(df[,1],FALSE) + StressItem(df[,2],FALSE) + 
