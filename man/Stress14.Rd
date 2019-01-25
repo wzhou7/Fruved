@@ -16,10 +16,13 @@ Stress14(data)
     Your input data containing the responses of the stress survey
   }
 }
-\details{
-  The variable names of the stress survey should be as follows, the ordering does not matter.
-  \item{a}{bc}
+\format{
+  The data should name the stress survey variables as follows (the ordering does not matter).
+  \describe{
+    \item{\code{STRESS_5}}{abc}
+  }
 }
+%\details{}
 \value{
   ~Describe the value returned
   If it is a LIST, use
