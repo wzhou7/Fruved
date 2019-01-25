@@ -1,4 +1,7 @@
-require(RCurl)
+if(!require(RCurl)){
+  install.packages("RCurl")
+  library(RCurl)
+}
 trim <- function (x) gsub("^\\s+|\\s+$", "", x)
 Dsqcertyp <- read.csv(text=getURL("https://raw.githubusercontent.com/wzhou7/Fruved/master/data/nhanes.dietvars.excel.0212-2013/Dsqcertyp1.csv"))
 Dsqcertyp$Name <- trim(Dsqcertyp$Name)
