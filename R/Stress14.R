@@ -12,7 +12,7 @@ StressItem <- function(x,rev){
 Stress14 <- function(data){
   index <- paste0("STRESS_",c(5,3,2,1,6:15))
   df <- data[,index]
-  StressScore <- StressItem(df[,1],FALSE) + StressItem(df[,2],FALSE) + 
+  Stress_Score <- StressItem(df[,1],FALSE) + StressItem(df[,2],FALSE) + 
     StressItem(df[,3],FALSE) + StressItem(df[,4],TRUE) + StressItem(df[,5],TRUE) + 
     StressItem(df[,6],TRUE) + StressItem(df[,7],TRUE) + StressItem(df[,8],FALSE) + 
     StressItem(df[,9],TRUE) + StressItem(df[,10],TRUE) + StressItem(df[,11],FALSE) +
