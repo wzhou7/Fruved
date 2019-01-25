@@ -1,8 +1,8 @@
 \name{Stress14}
 \alias{Stress14}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Cohen's Stress
-%%  ~~function to do ... ~~
+\title{
+score
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
@@ -47,7 +47,7 @@ Stress14(x)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (x) 
+function (x)
 {
   }
 }
