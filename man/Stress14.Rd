@@ -11,16 +11,16 @@ The function return the stress score given the data
 Stress14(data)
 }
 %- maybe also 'usage' for other objects documented here.
-\arguments{
-  \item{data}{
-    Your input data containing the responses of the stress survey
-  }
-}
+%\arguments{
+%  \item{data}{
+%    Your input data containing the responses of the stress survey
+%  }
+%}
 \format{
   The data should name the stress survey variables as follows (the ordering does not matter).
   \describe{
-    \item{\code{STRESS_5}}{abc}
-    \item{\code{STRESS_1}}{def}
+    \item{\code{BMI}}{The response variable.  Body mass index.}
+    \item{\code{School_meal}}{Participation of school meal programs (1: Yes, 0: No)}
   }
 }
 %\details{}
