@@ -1,7 +1,3 @@
-# MET values and Formula for computation of Met-minutes
-# Walking MET-minutes/week = 3.3 * walking minutes * walking days
-# Moderate MET-minutes/week = 4.0 * moderate-intensity activity minutes * moderate days
-# Vigorous MET-minutes/week = 8.0 * vigorous-intensity activity minutes * vigorous-intensity days
 Score_IPAQ <- function(df){
     x1 <- x3 <- x5 <- rep(NA,nrow(df))  
   

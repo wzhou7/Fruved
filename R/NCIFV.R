@@ -1,23 +1,20 @@
-# this is a change
 freq <- function(x){
-    if(is.na(x)) {y <- 0}
-    if(!is.na(x)){
-        if(x==1) {y <- 0}
-        if(x==2) {y <- 0.067}
-        if(x==3) {y <- 0.214}
-        if(x==4) {y <- 0.5}
-        if(x==5) {y <- 0.786}
-        if(x==6) {y <- 1}
-        if(x==7) {y <- 2}
-        if(x==8) {y <- 3}
-        if(x==9) {y <- 4}
-        if(x==10) {y <- 5}
-        if(x==11) {y <- 0}
-    }
+    y <- rep(NA,length(x))
+    y[is.na(x)] <- 0
+    y[x==1] <- 0
+    y[x==2] <- 0.067
+    y[x==3] <- 0.214
+    y[x==4] <- 0.5
+    y[x==5] <- 0.786
+    y[x==6] <- 1
+    y[x==7] <- 2
+    y[x==8] <- 3
+    y[x==9] <- 4
+    y[x==10] <- 5
+    y[x==11] <- 0
     return(y)
 }
 
-# this is another change
 Pyramid <- function(x,FVfreq){
     for(s in 1:nrow(x)){
         for(t in 1:ncol(x)){
@@ -103,9 +100,7 @@ Pyramid <- function(x,FVfreq){
     veg <- y[,-c(1,2)]
     veg_freq <- FVfreq[,-c(1,2)]
     most_freq_veg <- c()
-    #for(j in 1:7){
-    #    veg[,j][is.na(veg[,j])] <- 0
-    #}
+    
     for(i in 1:m){
         most_freq_veg[i] <- sum(veg[i,]*veg_freq[i,],na.rm=TRUE)/sum(veg_freq[i,],na.rm=TRUE)
     }
@@ -128,26 +123,24 @@ Pyramid <- function(x,FVfreq){
     return(y)
 }
 
-ScoreFV <- function(data){
-    
-    index1 <- c("NCIfv1","NCIfv3","NCIfv5","NCIfv7","NCIfv9","NCIfv11","NCIfv13","NCIfv15","NCIfv17")
+Score_FV <- function(data){
+    index1 <- c("NCIFV1","NCIFV3","NCIFV5","NCIFV7","NCIFV9","NCIFV11","NCIFV13","NCIFV15","NCIFV17")
     FreqQuestions <- data[,index1]
-    m <- nrow(data)
-    n1 <- ncol(FreqQuestions)
-    FVfreq <- as.data.frame(matrix(NA,nrow=m,ncol=n1))
-    for(i in 1:m){
-        for(j in 1:n1){
-            FVfreq[i,j] <- freq(FreqQuestions[i,j])
-        }
+    FVfreq <- as.data.frame(matrix(NA,nrow=nrow(FreqQuestions),ncol=ncol(FreqQuestions)))
+    for(j in 1:ncol(FreqQuestions)){
+      FVfreq[,j] <- freq(FreqQuestions[,j])
     }
     
-    index2 <- c("NCIfv2","NCIfv4","NCIfv6","NCIfv8","NCIfv10","NCIfv12","NCIfv14","NCIfv16","NCIfv18")
+    index2 <- c("NCIFV2","NCIFV4","NCIFV6","NCIFV8","NCIFV10","NCIFV12","NCIFV14","NCIFV16","NCIFV18")
     MyPyramid <- data[,index2]
     Pyramid_Score <- Pyramid(MyPyramid,FVfreq)
     
-    FV_Score <- rep(NA,m)
-    for(i in 1:m){
+    FV_Score <- rep(NA,nrow(data))
+    for(i in 1:nrow(data)){
         FV_Score[i] <- sum(Pyramid_Score[i,]*FVfreq[i,])
+        if(sum(!is.na(FreqQuestions[i,]))==0){
+          FV_Score[i] <- NA
+        }
     }
     
     return(FV_Score)

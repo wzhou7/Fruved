@@ -1,20 +1,39 @@
 \name{NCIFV}
 \alias{NCIFV}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{NCI Fruit and Vegetables
-%%  ~~function to do ... ~~
+\title{Scoring of NCI Fruit and Vegetables
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-NCIFV(x)
+Score_FV(data)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
 }
+\format{
+  The data needs to name the survey variables as follows (the ordering does not matter): Over the last month, how often did you
+  \describe{
+    \item{\code{NCIFV1}}{…drink 100\% juice such as orange, apple, grape, or grapefruit juice?}
+    \item{\code{NCIFV2}}{Each time you drank 100\% juice, how much did you usually drink?}
+    \item{\code{NCIFV3}}{…eat fruit? Count any kind of fruit – fresh, canned, and frozen.}
+    \item{\code{NCIFV4}}{Each time you ate fruit, how much did you usually eat? }
+    \item{\code{NCIFV5}}{...eat lettuce salad (with or without other vegetables)?}
+    \item{\code{NCIFV6}}{Each time you ate lettuce salad, how much did you usually eat? }
+    \item{\code{NCIFV7}}{...eat French fries or fried potatoes?}
+    \item{\code{NCIFV8}}{Each time you ate French fries or fried potatoes, how much did you usually eat?}
+    \item{\code{NCIFV9}}{…eat other white potatoes?}
+    \item{\code{NCIFV10}}{Each time you ate these potatoes, how much did you usually eat?}
+    \item{\code{NCIFV11}}{...eat cooked dried beans?}
+    \item{\code{NCIFV12}}{Each time you ate these beans, how much did you usually eat?}
+    \item{\code{NCIFV13}}{...eat other vegetables? }
+    \item{\code{NCIFV14}}{Each of these times that you ate other vegetables, how much did you usually eat?}
+    \item{\code{NCIFV15}}{...eat tomato sauce?}
+    \item{\code{NCIFV16}}{Each time you ate tomato sauce, how much did you usually eat?}
+    \item{\code{NCIFV17}}{...eat vegetable soups?}
+    \item{\code{NCIFV18}}{Each time you ate vegetable soup, how much did you usually eat?}
+  }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
@@ -27,10 +46,10 @@ NCIFV(x)
 %% ...
 }
 \references{
-%% ~put references to the literature/web site here ~
+https://epi.grants.cancer.gov/diet/screeners/fruitveg/scoring/allday.html
 }
 \author{
-%%  ~~who you are~~
+Wangcheng Yan, Wenjun Zhou
 }
 \note{
 %%  ~~further notes~~
@@ -42,14 +61,6 @@ NCIFV(x)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x) 
-{
-  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
