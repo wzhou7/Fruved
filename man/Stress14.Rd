@@ -22,20 +22,20 @@ Score_Stress(data)
 \format{
   The data needs to name the survey variables as follows (the ordering does not matter):
   \describe{
-    \item{\code{STRESS_5}}{…been upset because of something that happened unexpectedly?}
-    \item{\code{STRESS_3}}{...felt that you were unable to control the important things in your life?}
-    \item{\code{STRESS_2}}{...felt nervous and stressed?}
-    \item{\code{STRESS_1}}{...dealt successfully with irritating life hassles? }
-    \item{\code{STRESS_6}}{...felt that you were effectively coping with important changes that were occurring in your life?}
-    \item{\code{STRESS_7}}{...felt confident about your ability to handle your personal problems?}
-    \item{\code{STRESS_8}}{...felt that things were going your way?}
-    \item{\code{STRESS_9}}{...found that you could not cope with all the things that you had to do?}
-    \item{\code{STRESS_10}}{...been able to control irritations in your life?}
-    \item{\code{STRESS_11}}{...felt that you were on top of things?}
-    \item{\code{STRESS_12}}{...been angered because of things that happen that were outside of your control?}
-    \item{\code{STRESS_13}}{...found yourself thinking about things that you have to accomplish?}
-    \item{\code{STRESS_14}}{...been able to control the way you spend your time?}
-    \item{\code{STRESS_15}}{...felt difficulties were piling up so high that you could not overcome them?}
+    \item{\code{STRESS_1}}{…been upset because of something that happened unexpectedly?}
+    \item{\code{STRESS_2}}{...felt that you were unable to control the important things in your life?}
+    \item{\code{STRESS_3}}{...felt nervous and stressed?}
+    \item{\code{STRESS_4}}{...dealt successfully with irritating life hassles? }
+    \item{\code{STRESS_5}}{...felt that you were effectively coping with important changes that were occurring in your life?}
+    \item{\code{STRESS_6}}{...felt confident about your ability to handle your personal problems?}
+    \item{\code{STRESS_7}}{...felt that things were going your way?}
+    \item{\code{STRESS_8}}{...found that you could not cope with all the things that you had to do?}
+    \item{\code{STRESS_9}}{...been able to control irritations in your life?}
+    \item{\code{STRESS_10}}{...felt that you were on top of things?}
+    \item{\code{STRESS_11}}{...been angered because of things that happen that were outside of your control?}
+    \item{\code{STRESS_12}}{...found yourself thinking about things that you have to accomplish?}
+    \item{\code{STRESS_13}}{...been able to control the way you spend your time?}
+    \item{\code{STRESS_14}}{...felt difficulties were piling up so high that you could not overcome them?}
   }
 }
 \details{
