@@ -16,7 +16,7 @@ Score_zBMI <- function(data){
   for(i in 1:nrow(data)){
     EOD <- as.Date(strsplit(as.character(data$StartDate[i])," ")[[1]][1],"%m/%d/%y")
     if(!is.na(data$DOB[i]) & !is.na(EOD)){
-      data$ageinmonth[i] <- eeptools::age_calc(dob = data$DOB[i], enddate = EOD, 
+      data$ageinmonth[i] <- age_calc(dob = data$DOB[i], enddate = EOD, 
                                      units = "months")
     }
   }
