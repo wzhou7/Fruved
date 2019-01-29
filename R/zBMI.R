@@ -1,7 +1,7 @@
 if (!require("eeptools")){
   install.packages("eeptools")
-  library(eeptools)
 }
+library(eeptools)
 
 Score_zBMI <- function(data){
   data$DEM2AGE_YEAR_NORM <- 1919 + data$DEM2AGE_YEAR
