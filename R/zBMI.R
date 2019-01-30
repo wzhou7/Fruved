@@ -1,4 +1,4 @@
-Score_zBMI <- function(data){
+Score_age <- function(data){
   data$DEM2AGE_YEAR_NORM <- 1919 + data$DEM2AGE_YEAR
   data$DEM2AGE_YEAR_NORM[data$DEM2AGE_YEAR==99] <- NA
   data$DEM2AGE_MONTH_NORM <- data$DEM2AGE_MONTH
@@ -12,9 +12,15 @@ Score_zBMI <- function(data){
     EOD <- as.Date(strsplit(as.character(data$StartDate[i])," ")[[1]][1],"%m/%d/%y")
     if(!is.na(data$DOB[i]) & !is.na(EOD)){
       data$ageinmonth[i] <- eeptools:age_calc(dob = data$DOB[i], enddate = EOD, 
-                                     units = "months")
+                                              units = "months")
     }
   }
+  return(data$ageinmonth[i])
+}
+
+
+Score_zBMI <- function(data,age_month=FALSE){
+  if(!age_month){data$ageinmonth <- Score_age(data)}
   data$ageinmonth_round <- floor(data$ageinmonth) + 0.5
   
   data$zBMI <- rep(NA,nrow(data))
@@ -46,5 +52,5 @@ Score_zBMI <- function(data){
   }
   
   names(data)[names(data)=="zBMI_category"] <- "zBMI_Category"
-  return(data[,c("ageinmonth","zBMI","zBMI_Category")])
+  return(data[,c("zBMI","zBMI_Category")])
 }
