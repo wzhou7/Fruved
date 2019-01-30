@@ -1,5 +1,5 @@
-Score_zBMI <- function(data,agemonth=FALSE){
-  if(!agemonth){
+Score_zBMI <- function(data,age_month=FALSE){
+  if(!age_month){
     data$DEM2AGE_YEAR_NORM <- 1919 + data$DEM2AGE_YEAR
     data$DEM2AGE_YEAR_NORM[data$DEM2AGE_YEAR==99] <- NA
     data$DEM2AGE_MONTH_NORM <- data$DEM2AGE_MONTH
