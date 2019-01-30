@@ -17,6 +17,7 @@ Score_zBMI <- function(data,age_month=FALSE){
     }
   }
   data$ageinmonth_round <- floor(data$ageinmonth) + 0.5
+  data$ageinmonth_round[data$ageinmonth <= 24.25] <- 24
   
   data$zBMI <- rep(NA,nrow(data))
   data$zBMI_category <- rep(NA,nrow(data))
