@@ -14,7 +14,7 @@ Score_age <- function(data){
       data$ageinmonth[i] <- age_calc(dob = data$DOB[i], enddate = EOD, units = "months")
     }
   }
-  return(data$ageinmonth[i])
+  return(data$ageinmonth)
 }
 
 
