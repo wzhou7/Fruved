@@ -10,7 +10,7 @@ The function returns the BMI.
 Make sure the unit of height is centimeter (cm) and the unit of weight is kilogram (kg).
 }
 \usage{
-Score_BMI(data,ht="Heigh",wt="Weight")
+Score_BMI(data,ht="Height",wt="Weight")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

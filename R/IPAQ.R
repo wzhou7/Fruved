@@ -1,14 +1,14 @@
 Score_IPAQ <- function(df){
     x1 <- x3 <- x5 <- rep(NA,nrow(df))  
-  
-    x1[df$IPAQ1==9] <- NA
+    
     x1 <- df$IPAQ1 - 1
+    x1[df$IPAQ1==9] <- NA
     
-    x3[df$IPAQ3==9] <- NA
     x3 <- df$IPAQ3 - 1
+    x3[df$IPAQ3==9] <- NA
     
-    x5[df$IPAQ5==9] <- NA
     x5 <- df$IPAQ5 - 1
+    x5[df$IPAQ5==9] <- NA
     
     x2 <- 10 * (df$IPAQ2 - 1)
     x2[df$IPAQ2==20] <- NA
