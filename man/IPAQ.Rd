@@ -57,6 +57,9 @@ Wangcheng Yan, Wenjun Zhou
 \seealso{
 }
 \examples{
+library(Fruved)
+data("STRESS_IPAQ_BMI")
+Score_IPAQ(STRESS_IPAQ_BMI)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

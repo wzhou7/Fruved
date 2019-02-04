@@ -63,6 +63,9 @@ Wangcheng Yan, Wenjun Zhou
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
+library(Fruved)
+data("STRESS_IPAQ_BMI")
+Score_Stress(STRESS_IPAQ_BMI)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
