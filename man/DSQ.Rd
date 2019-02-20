@@ -21,9 +21,9 @@ The data needs to name the survey variables as follows,
   \item{\code{gender}}{gender of a unit: 1=male; 2=female}
   }
 
-During the past month, how often did you drink …
+During the past month, how often did you drink ...
   \describe{
-    \item{\code{Dsqmilk1}}{…any milk (either to drink or on cereal)? Include regular milks, chocolate or other flavored milks, lactose-free milk, buttermilk. Please do not include soy milk or small amounts of milk in coffee or tea.
+    \item{\code{Dsqmilk1}}{...any milk (either to drink or on cereal)? Include regular milks, chocolate or other flavored milks, lactose-free milk, buttermilk. Please do not include soy milk or small amounts of milk in coffee or tea.
     
     (1)	Never (will skip the next question);
     (2)	1 time last month;
@@ -34,21 +34,21 @@ During the past month, how often did you drink …
     (7)	5-6 times per week;
     (8)	1 time per day;
     (9)	2-3 times per day;
-    (10)	4-5 times per day;
-    (11)	6 or more times per day}
+    (10) 4-5 times per day;
+    (11) 6 or more times per day}
     
-    \item{\code{Dsqmilk2}}{If answer above is not ``Never''… During the past month, what kind of milk did you usually drink?
+    \item{\code{Dsqmilk2}}{If answer above is not ``Never''... During the past month, what kind of milk did you usually drink?
     
     (1)	Whole or regular milk;
     (2)	2\% fat or reduced-fat milk;
-    (3)	1\%, ½\%, or low-fat milk;
+    (3)	1\%, 0.5\%, or low-fat milk;
     (4)	Fat-free, skim, or nonfat milk;
     (5)	Soy milk;
     (6)	Other}
     
-    \item{\code{Dsqmilk2_TEXT}}{If “Other” is chosen above… Specify  kind of milk _________}
+    \item{\code{Dsqmilk2_TEXT}}{If ``Other'' is chosen above... Specify  kind of milk _________}
     
-    \item{\code{Dsqsoda}}{…regular soda or pop that contains sugar? Do not include diet soda. 
+    \item{\code{Dsqsoda}}{...regular soda or pop that contains sugar? Do not include diet soda. 
     
     The coded values are the same as Dsqmilk1}
     
@@ -65,9 +65,9 @@ During the past month, how often did you drink …
     The coded values are the same as Dsqmilk1}
   }
   
-During the past month, how often did you eat…
+During the past month, how often did you eat...
   \describe{
-    \item{\code{Dsqfruit}}{…fruit? Include fresh, frozen, or canned fruit. Do not include juices. 
+    \item{\code{Dsqfruit}}{...fruit? Include fresh, frozen, or canned fruit. Do not include juices. 
     
       (1)	Never; 
       (2)	1 time last month;
@@ -155,7 +155,7 @@ During the past month, how often did you eat…
     
     The coded values are the same as Dsqfruit}
     
-    \item{\code{Dsqcertyp1}}{If answer above is not ``Neve''… During the past month, what kind of cereal did you usually eat?
+    \item{\code{Dsqcertyp1}}{If answer above is not ``Never''... During the past month, what kind of cereal did you usually eat?
 
     Drop down menu with 350 cereal options.}
     
