@@ -22,7 +22,7 @@ Score_Stress(data)
 \format{
   The data needs to name the survey variables as follows (the ordering does not matter):
   \describe{
-    \item{\code{STRESS_1}}{…been upset because of something that happened unexpectedly?}
+    \item{\code{STRESS_1}}{...been upset because of something that happened unexpectedly?}
     \item{\code{STRESS_2}}{...felt that you were unable to control the important things in your life?}
     \item{\code{STRESS_3}}{...felt nervous and stressed?}
     \item{\code{STRESS_4}}{...dealt successfully with irritating life hassles? }
