@@ -19,9 +19,10 @@ Score_Personality <- function(data){
     Emotional_Stability <- (dg[,4] + dg[,9])/2
     Openness_to_Experiences <- (dg[,5] + dg[,10])/2
     p.score <- cbind(Extraversion,Agreeableness,Conscientiousness,Emotional_Stability,Openness_to_Experiences)
-    names(p.score) <- c("P_extraversion","P_agreeableness","P_conscientiousness",
-                        "P_emotionalstability","P_openess")
     
-    return(as.data.frame(p.score))
+    out <- as.data.frame(p.score)
+    names(out) <- c("P_extraversion","P_agreeableness","P_conscientiousness",
+                    "P_emotionalstability","P_openess")
+    return(out)
   }
 }
