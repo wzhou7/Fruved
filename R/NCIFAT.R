@@ -11,23 +11,42 @@ freqency <- function(x){
   return(y)
 }
 
-serving <- function(x,gender){
-  if(is.na(gender) | gender=="" | !(gender %in% c(1,2))){y <- NA}
+serving <- function(x,gender,age){
+  cond1 <- is.na(gender) | gender=="" | !(gender %in% c(1,2))
+  cond2 <- is.na(age) | age="" | age<18
+  if(cond1 | cond2){y <- NA}
   else{
     if(gender==1){
-      if(x=="Ncifat1"){y <- 74.666667}
-      if(x=="Ncifat2"){y <- 366.666667}
-      if(x=="Ncifat3"){y <- 92}
-      if(x=="Ncifat4"){y <- 25}
-      if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 9.54}
-      if(x=="Ncifat6"){y <- 373.2}
-      if(x=="Ncifat7"){y <- 131.75}
-      if(x=="Ncifat8"){y <- 114}
-      if(x=="Ncifat9"){y <- 33.36}
-      if(x=="Ncifat10"){y <- 112.5}
-      if(x=="Ncifat12"){y <- 13.75}
-      if(x=="Ncifat13"){y <- 36.72}
-      if(x=="Ncifat14"){y <- 213.625}
+      if(age>=18 & age<28){
+        if(x=="Ncifat1"){y <- 74.666667}
+        if(x=="Ncifat2"){y <- 366.666667}
+        if(x=="Ncifat3"){y <- 92}
+        if(x=="Ncifat4"){y <- 25}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 9.54}
+        if(x=="Ncifat6"){y <- 373.2}
+        if(x=="Ncifat7"){y <- 131.75}
+        if(x=="Ncifat8"){y <- 114}
+        if(x=="Ncifat9"){y <- 33.36}
+        if(x=="Ncifat10"){y <- 112.5}
+        if(x=="Ncifat12"){y <- 13.75}
+        if(x=="Ncifat13"){y <- 36.72}
+        if(x=="Ncifat14"){y <- 213.625}
+      }
+      if(age>=28 & age<38){
+        if(x=="Ncifat1"){y <- 74.666667}
+        if(x=="Ncifat2"){y <- 366.666667}
+        if(x=="Ncifat3"){y <- 92}
+        if(x=="Ncifat4"){y <- 25}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 9.54}
+        if(x=="Ncifat6"){y <- 373.2}
+        if(x=="Ncifat7"){y <- 131.75}
+        if(x=="Ncifat8"){y <- 114}
+        if(x=="Ncifat9"){y <- 33.36}
+        if(x=="Ncifat10"){y <- 112.5}
+        if(x=="Ncifat12"){y <- 13.75}
+        if(x=="Ncifat13"){y <- 36.72}
+        if(x=="Ncifat14"){y <- 213.625}
+      }
     }
     if(gender==2){
       if(x=="Ncifat1"){y <- 50}
