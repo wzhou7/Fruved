@@ -13,7 +13,7 @@ freqency <- function(x){
 
 serving <- function(x,gender,age){
   cond1 <- is.na(gender) | gender=="" | !(gender %in% c(1,2))
-  cond2 <- is.na(age) | age="" | age<18
+  cond2 <- is.na(age) | age=="" | age<18
   if(cond1 | cond2){y <- NA}
   else{
     if(gender==1){
@@ -33,42 +33,210 @@ serving <- function(x,gender,age){
         if(x=="Ncifat14"){y <- 213.625}
       }
       if(age>=28 & age<38){
-        if(x=="Ncifat1"){y <- 74.666667}
-        if(x=="Ncifat2"){y <- 366.666667}
+        if(x=="Ncifat1"){y <- 61.5}
+        if(x=="Ncifat2"){y <- 250}
         if(x=="Ncifat3"){y <- 92}
-        if(x=="Ncifat4"){y <- 25}
+        if(x=="Ncifat4"){y <- 40.25}
         if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 9.54}
-        if(x=="Ncifat6"){y <- 373.2}
-        if(x=="Ncifat7"){y <- 131.75}
-        if(x=="Ncifat8"){y <- 114}
-        if(x=="Ncifat9"){y <- 33.36}
-        if(x=="Ncifat10"){y <- 112.5}
+        if(x=="Ncifat6"){y <- 311}
+        if(x=="Ncifat7"){y <- 128}
+        if(x=="Ncifat8"){y <- 85.5}
+        if(x=="Ncifat9"){y <- 28.35}
+        if(x=="Ncifat10"){y <- 114}
         if(x=="Ncifat12"){y <- 13.75}
-        if(x=="Ncifat13"){y <- 36.72}
-        if(x=="Ncifat14"){y <- 213.625}
+        if(x=="Ncifat13"){y <- 44.06}
+        if(x=="Ncifat14"){y <- 195}
+      }
+      if(age>=38 & age<48){
+        if(x=="Ncifat1"){y <- 57.5}
+        if(x=="Ncifat2"){y <- 250}
+        if(x=="Ncifat3"){y <- 92}
+        if(x=="Ncifat4"){y <- 32}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 9.46}
+        if(x=="Ncifat6"){y <- 249}
+        if(x=="Ncifat7"){y <- 123.2}
+        if(x=="Ncifat8"){y <- 88}
+        if(x=="Ncifat9"){y <- 28.35}
+        if(x=="Ncifat10"){y <- 100}
+        if(x=="Ncifat12"){y <- 13.75}
+        if(x=="Ncifat13"){y <- 31.25}
+        if(x=="Ncifat14"){y <- 166}
+      }
+      if(age>=48 & age<58){
+        if(x=="Ncifat1"){y <- 56}
+        if(x=="Ncifat2"){y <- 245}
+        if(x=="Ncifat3"){y <- 92}
+        if(x=="Ncifat4"){y <- 32}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 9.2}
+        if(x=="Ncifat6"){y <- 249}
+        if(x=="Ncifat7"){y <- 127.5}
+        if(x=="Ncifat8"){y <- 114}
+        if(x=="Ncifat9"){y <- 28.35}
+        if(x=="Ncifat10"){y <- 100}
+        if(x=="Ncifat12"){y <- 13.75}
+        if(x=="Ncifat13"){y <- 31.25}
+        if(x=="Ncifat14"){y <- 165}
+      }
+      if(age>=58 & age<68){
+        if(x=="Ncifat1"){y <- 46}
+        if(x=="Ncifat2"){y <- 214.375}
+        if(x=="Ncifat3"){y <- 92}
+        if(x=="Ncifat4"){y <- 27}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 7.883333}
+        if(x=="Ncifat6"){y <- 248}
+        if(x=="Ncifat7"){y <- 122}
+        if(x=="Ncifat8"){y <- 57}
+        if(x=="Ncifat9"){y <- 28.35}
+        if(x=="Ncifat10"){y <- 85.5}
+        if(x=="Ncifat12"){y <- 9.15}
+        if(x=="Ncifat13"){y <- 29.4}
+        if(x=="Ncifat14"){y <- 165}
+      }
+      if(age>=68 & age<78){
+        if(x=="Ncifat1"){y <- 39}
+        if(x=="Ncifat2"){y <- 198.9375}
+        if(x=="Ncifat3"){y <- 80}
+        if(x=="Ncifat4"){y <- 26}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 7.1}
+        if(x=="Ncifat6"){y <- 186.75}
+        if(x=="Ncifat7"){y <- 118}
+        if(x=="Ncifat8"){y <- 57}
+        if(x=="Ncifat9"){y <- 24}
+        if(x=="Ncifat10"){y <- 85.5}
+        if(x=="Ncifat12"){y <- 13.75}
+        if(x=="Ncifat13"){y <- 29.4}
+        if(x=="Ncifat14"){y <- 158}
+      }
+      if(age>=78){
+        if(x=="Ncifat1"){y <- 33}
+        if(x=="Ncifat2"){y <- 160.725}
+        if(x=="Ncifat3"){y <- 80}
+        if(x=="Ncifat4"){y <- 24}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 7}
+        if(x=="Ncifat6"){y <- 186.75}
+        if(x=="Ncifat7"){y <- 114.25}
+        if(x=="Ncifat8"){y <- 57}
+        if(x=="Ncifat9"){y <- 22.88}
+        if(x=="Ncifat10"){y <- 97}
+        if(x=="Ncifat12"){y <- 4.58}
+        if(x=="Ncifat13"){y <- 29.38}
+        if(x=="Ncifat14"){y <- 158}
       }
     }
     if(gender==2){
-      if(x=="Ncifat1"){y <- 50}
-      if(x=="Ncifat2"){y <- 245}
-      if(x=="Ncifat3"){y <- 80}
-      if(x=="Ncifat4"){y <- 26}
-      if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 7}
-      if(x=="Ncifat6"){y <- 249}
-      if(x=="Ncifat7"){y <- 118}
-      if(x=="Ncifat8"){y <- 57}
-      if(x=="Ncifat9"){y <- 26.175}
-      if(x=="Ncifat10"){y <- 79.5}
-      if(x=="Ncifat12"){y <- 13.75}
-      if(x=="Ncifat13"){y <- 30.63}
-      if(x=="Ncifat14"){y <- 158}
+      
+      if(age>=18 & age<28){
+        if(x=="Ncifat1"){y <- 50}
+        if(x=="Ncifat2"){y <- 245}
+        if(x=="Ncifat3"){y <- 80}
+        if(x=="Ncifat4"){y <- 26}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 7}
+        if(x=="Ncifat6"){y <- 249}
+        if(x=="Ncifat7"){y <- 118}
+        if(x=="Ncifat8"){y <- 57}
+        if(x=="Ncifat9"){y <- 26.175}
+        if(x=="Ncifat10"){y <- 79.5}
+        if(x=="Ncifat12"){y <- 13.75}
+        if(x=="Ncifat13"){y <- 30.63}
+        if(x=="Ncifat14"){y <- 158}
+      }
+      if(age>=28 & age<38){
+        if(x=="Ncifat1"){y <- 49.5}
+        if(x=="Ncifat2"){y <- 245}
+        if(x=="Ncifat3"){y <- 80}
+        if(x=="Ncifat4"){y <- 25}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 6.29}
+        if(x=="Ncifat6"){y <- 248.8}
+        if(x=="Ncifat7"){y <- 118}
+        if(x=="Ncifat8"){y <- 57}
+        if(x=="Ncifat9"){y <- 21}
+        if(x=="Ncifat10"){y <- 70}
+        if(x=="Ncifat12"){y <- 6.88}
+        if(x=="Ncifat13"){y <- 29.4}
+        if(x=="Ncifat14"){y <- 158}
+      }
+      if(age>=38 & age<48){
+        if(x=="Ncifat1"){y <- 44}
+        if(x=="Ncifat2"){y <- 244.8}
+        if(x=="Ncifat3"){y <- 69}
+        if(x=="Ncifat4"){y <- 24}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 5.925}
+        if(x=="Ncifat6"){y <- 248.8}
+        if(x=="Ncifat7"){y <- 118}
+        if(x=="Ncifat8"){y <- 57}
+        if(x=="Ncifat9"){y <- 22.5}
+        if(x=="Ncifat10"){y <- 70}
+        if(x=="Ncifat12"){y <- 9.17}
+        if(x=="Ncifat13"){y <- 29.4}
+        if(x=="Ncifat14"){y <- 158}
+      }
+      if(age>=48 & age<58){
+        if(x=="Ncifat1"){y <- 43.5}
+        if(x=="Ncifat2"){y <- 229.69}
+        if(x=="Ncifat3"){y <- 80}
+        if(x=="Ncifat4"){y <- 24}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 7.095}
+        if(x=="Ncifat6"){y <- 217.875}
+        if(x=="Ncifat7"){y <- 118}
+        if(x=="Ncifat8"){y <- 114}
+        if(x=="Ncifat9"){y <- 22.063333}
+        if(x=="Ncifat10"){y <- 70}
+        if(x=="Ncifat12"){y <- 9.183333}
+        if(x=="Ncifat13"){y <- 29.4}
+        if(x=="Ncifat14"){y <- 155}
+      }
+      if(age>=58 & age<68){
+        if(x=="Ncifat1"){y <- 33}
+        if(x=="Ncifat2"){y <- 196}
+        if(x=="Ncifat3"){y <- 68}
+        if(x=="Ncifat4"){y <- 18}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 5.296667}
+        if(x=="Ncifat6"){y <- 186.75}
+        if(x=="Ncifat7"){y <- 118}
+        if(x=="Ncifat8"){y <- 57}
+        if(x=="Ncifat9"){y <- 24}
+        if(x=="Ncifat10"){y <- 66}
+        if(x=="Ncifat12"){y <- 6.11}
+        if(x=="Ncifat13"){y <- 29.38}
+        if(x=="Ncifat14"){y <- 122.25}
+      }
+      if(age>=68 & age<78){
+        if(x=="Ncifat1"){y <- 39}
+        if(x=="Ncifat2"){y <- 183.75}
+        if(x=="Ncifat3"){y <- 56}
+        if(x=="Ncifat4"){y <- 19.5}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 5.32}
+        if(x=="Ncifat6"){y <- 186.6}
+        if(x=="Ncifat7"){y <- 112.427143}
+        if(x=="Ncifat8"){y <- 57}
+        if(x=="Ncifat9"){y <- 21}
+        if(x=="Ncifat10"){y <- 70}
+        if(x=="Ncifat12"){y <- 10.31}
+        if(x=="Ncifat13"){y <- 29.38}
+        if(x=="Ncifat14"){y <- 158}
+      }
+      if(age>=78){
+        if(x=="Ncifat1"){y <- 33.5}
+        if(x=="Ncifat2"){y <- 183.75}
+        if(x=="Ncifat3"){y <- 46}
+        if(x=="Ncifat4"){y <- 16}
+        if(x=="Ncifat5" | x=="Ncifat11" | x=="Ncifat15"){y <- 4.865}
+        if(x=="Ncifat6"){y <- 186.75}
+        if(x=="Ncifat7"){y <- 109}
+        if(x=="Ncifat8"){y <- 57}
+        if(x=="Ncifat9"){y <- 25.8}
+        if(x=="Ncifat10"){y <- 64}
+        if(x=="Ncifat12"){y <- 4.58}
+        if(x=="Ncifat13"){y <- 22.03}
+        if(x=="Ncifat14"){y <- 83}
+      }
     }
   }
   return(y)
 }
 
 Score_NCIFAT <- function(data){
-  subdata <- data[,c(paste("Ncifat",1:17,sep=""),"gender")]
+  subdata <- data[,c(paste("Ncifat",1:17,sep=""),"gender","Age")]
   freq <- matrix(NA,nrow=nrow(subdata),ncol=15)
   
   for(j in 1:15){
@@ -79,7 +247,7 @@ Score_NCIFAT <- function(data){
   serve <- matrix(NA,nrow=nrow(subdata),ncol=15)
   for(i in 1:nrow(subdata)){
     for(j in 1:15){
-      serve[i,j] <- serving(colnames(subdata)[j],subdata[i,18])
+      serve[i,j] <- serving(colnames(subdata)[j],subdata$gender[i],subdata$Age[i])
     }
   }
   
