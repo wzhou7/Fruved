@@ -4,13 +4,20 @@ This package consists of a few survey scoring tools in the general field of nutr
 
 ## Which Instruments Are Included?
 
+* BECS
+
+* BMI
+
+* CEPS_College
+
+* CEPS_
+
 * NCI Fruit and Vegetables (NCIFV)
 
 * Cohen's Stress (STRESS)
 
 * International Physical Activity Questionnaire (IPAQ)
 
-* BMI
 
 ## Notes in the scoring of instruments
 
