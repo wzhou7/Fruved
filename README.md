@@ -1,22 +1,32 @@
-# Introduction-1
+# Introduction
 
-This package consists of a few survey scoring tools in the general field of nutrition and eating behaviors. This is still work in progress.
+This package consists of a few survey scoring tools for R users. The tools have been used for health and behaviorial studies in the GetFruved project. This is still work in progress.
+
+## What Is Fruved?
 
 ## Which Instruments Are Included?
 
-* BECS
+* Basics and Validated
 
-* BMI
+These are widely accepted calculations or validated tools.
 
-* CEPS_College
+- [BMI](docs/BMI.md)
 
-* CEPS_
+- NCI Fruit and Vegetables (NCIFV)
 
-* NCI Fruit and Vegetables (NCIFV)
+- Cohen's Stress (STRESS)
 
-* Cohen's Stress (STRESS)
+- International Physical Activity Questionnaire (IPAQ)
 
-* International Physical Activity Questionnaire (IPAQ)
+* Newer Tools Implemented
+
+- BECS
+
+* Newer Tools Developed
+
+- CEPS_College
+
+- CEPS_
 
 
 ## Notes in the scoring of instruments
@@ -25,4 +35,12 @@ This package consists of a few survey scoring tools in the general field of nutr
 	* Read the CSV files in the folder "nhanes.dietvars.excel.0212-2013" before running the scoring code
 	* The "gender" variable coding: 1 = male; 2 = female
 	* The "AGE" variable should be an integer measured in year  
+
+# Usage
+
+## How to Install Package
+
+## How to Use Package
+
+
 
