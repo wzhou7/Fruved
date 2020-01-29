@@ -14,14 +14,12 @@ To use this package, you will need the `devtools` library to install it from git
 install.packages("devtools") # install devtools
 library(devtools) # load devtools
 install_github("wzhou7/Fruved") # install Fruved
+```
+
+Then you can load the Fruved package
+
+```
 library(Fruved) # load Fruved
 ```
 
-Then you can use the available scoring functions as long as the input data frame meet the formating requirements (see specific [instruments](./docs/instrument_list.md) for detail). For example, you may run
-
-```
-df_out <- DSQ_Score(df_in)
-```
-
-where `df_in` is the input data frame and `df_out` is the output data frame.
-
+and use the available functions.
