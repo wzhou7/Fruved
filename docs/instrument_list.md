@@ -7,44 +7,41 @@
 
 * [Race and Ethnicity](RaceEth4.md)
 
-# Validated Instruments for Fruved Outcomes
+# Dietary
 
-* NCI Fruit and Vegetables (FV)
+* [NCI Fruit and Vegetables (FV)]()
 
-* NCI Fat Screener
-
-* [Cohen's Stress](Stress14)
-
-* International Physical Activity Questionnaire (IPAQ)
+* [NCI Fat Screener]()
 
 * [DSQ](DSQ.md)
 
-* Sleep (PSQI)
+* [sHEI](sHEI.md)
 
-* Personality
+# Lifestyles
 
+* [Cohen's Stress](Stress14.md)
 
-# Validated Instruments for Fruved Subprojects 
+* [International Physical Activity Questionnaire (IPAQ)]()
 
-- BECS
+* [The Pittsburgh Sleep Quality Index (PSQI)]()
 
-- Eating Disorder
+* [Personality]()
 
-- Food Security
+# Eating Behaviors 
 
-# Newer Tools Developed
+* [BECS]()
 
-- CEPS_College
+* [Eating Disorder]()
 
-- CEPS_HS
+* [Food Security]()
 
-* Priorities
+# Enrivonmental
 
-* Readiness
+* [CEPS College]()
 
-## Notes in the scoring of instruments
+* [CEPS High School]()
 
-* DSQ (to be updated)
-	* Read the CSV files in the folder "nhanes.dietvars.excel.0212-2013" before running the scoring code
-	* The "gender" variable coding: 1 = male; 2 = female
-	* The "AGE" variable should be an integer measured in year  
+* [Priorities]()
+
+* [Readiness]()
+
