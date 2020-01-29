@@ -9,7 +9,8 @@ Basic and Miscellaneous
 Dietary
 * [NCI Fruit and Vegetables](NCIFV.md) (FV)
 * [NCI Fat Screener](NCIFat.md)
-* [Dietary Screener Questionnaire ](DSQ.md) (DSQ)
+* [Dietary Screener Questionnaire - Earlier Methods](DSQ.md) (DSQ)
+* [Dietary Screener Questionnaire - Current Methods](DSQ2.md) (DSQ2)
 * [Healthy Eating Index using NDSR](NDSR.md) (HEI-NDSR)
 * [Short Healthy Eating Index](sHEI.md) (sHEI)
 
