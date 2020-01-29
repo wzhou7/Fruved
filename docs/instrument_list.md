@@ -2,11 +2,8 @@
 # List of Instruments Available
 
 * Basic and Miscellaneous
-
 - [BMI](BMI.md)
-
 - [zBMI](zBMI.md)
-
 - [Race and Ethnicity](RaceEth4.md)
 
 * Dietary
