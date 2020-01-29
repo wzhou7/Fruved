@@ -7,10 +7,11 @@ Basic and Miscellaneous
 * [Race and Ethnicity](RaceEth4.md)
 
 Dietary
-* [NCI Fruit and Vegetables (FV)](NCIFV.md)
+* [NCI Fruit and Vegetables](NCIFV.md) (FV)
 * [NCI Fat Screener](NCIFat.md)
-* [DSQ](DSQ.md)
-* [sHEI](sHEI.md)
+* [Dietary Screener Questionnaire ](DSQ.md) (DSQ)
+* [Healthy Eating Index using NDSR](NDSR.md) (HEI-NDSR)
+* [Short Healthy Eating Index](sHEI.md) (sHEI)
 
 Lifestyles
 * [Cohen's Stress](Stress14.md)
