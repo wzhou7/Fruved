@@ -1,10 +1,8 @@
-# DSQ
+# The 26-Item Dietary Screener Questionnaire (DSQ)
 
-Official information about the Dietary Screener Questionnaires (DSQ) can be found on the [NIH NCI website](https://epi.grants.cancer.gov/nhanes/dietscreen/).
+Official information about the Dietary Screener Questionnaires (DSQ) can be found on the [NIH NCI website](https://epi.grants.cancer.gov/nhanes/dietscreen/). The corresponding SAS programs are available on the [NIH NCI website](https://epi.grants.cancer.gov/nhanes/dietscreen/programs.html): see **Self-Administered Questionnaire: Paper**.
 
-We implemented the [Earlier Methods](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/earlier/) as they were the version available when we started the GetFruved project. The corresponding SAS programs are available on the [NIH NCI website](https://epi.grants.cancer.gov/nhanes/dietscreen/programs.html): see **Self-Administered Questionnaire: Paper**.
-
-When scoring, the code requires coefficients depending on subjects such as age group. 
+For DSQ, we implemented the [Earlier Methods](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/earlier/) as they were the version available when we started the GetFruved project. The current method is now implemented. Check DSQ2.
 
 ## Usage
 
@@ -20,7 +18,11 @@ where `df_in` is the input data frame and `df_out` is the output data frame.
 
 The input data frame requires the following variables:
 
-
+| Fruved Variable | SAS Variable | Choice | Score |   |
+|-----------------|--------------|--------|-------|---|
+| Age             |              |        |       |   |
+| Gender          |              |        |       |   |
+|                 |              |        |       |   |
 
 ## To-Do
 
