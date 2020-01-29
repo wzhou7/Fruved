@@ -18,13 +18,19 @@ where `df_in` is the input data frame and `df_out` is the output data frame.
 
 The input data frame requires the following variables:
 
-| Fruved Variable | SAS Variable | Choice | Score |   |
-|-----------------|--------------|--------|-------|---|
-| Age             |              |        |       |   |
-| Gender          |              |        |       |   |
-|                 |              |        |       |   |
+| Fruved Data Dictionary | SAS Variable | Choice | Score |   |
+|------------------------|--------------|--------|-------|---|
+| Age                    |              |        |       |   |
+| Gender                 |              |        |       |   |
+|                        |              |        |       |   |
 
 ### Output Variables
+
+| Fruved Data Dictionary | SAS Variable | Choice | Score |   |
+|------------------------|--------------|--------|-------|---|
+| Age                    |              |        |       |   |
+| Gender                 |              |        |       |   |
+|                        |              |        |       |   |
 
 ## To-Do
 
