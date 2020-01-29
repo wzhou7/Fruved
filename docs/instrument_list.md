@@ -1,47 +1,48 @@
 
-# Basic and Miscellaneous
+# List of Instruments Available
 
-* [BMI](BMI.md)
+* Basic and Miscellaneous
 
-* [zBMI](zBMI.md)
+- [BMI](BMI.md)
 
-* [Race and Ethnicity](RaceEth4.md)
+- [zBMI](zBMI.md)
 
-# Dietary
+- [Race and Ethnicity](RaceEth4.md)
 
-* [NCI Fruit and Vegetables (FV)]()
+* Dietary
 
-* [NCI Fat Screener]()
+- [NCI Fruit and Vegetables (FV)](NCIFV.md)
 
-* [DSQ](DSQ.md)
+- [NCI Fat Screener](NCIFat.md)
 
-* [sHEI](sHEI.md)
+- [DSQ](DSQ.md)
 
-# Lifestyles
+- [sHEI](sHEI.md)
 
-* [Cohen's Stress](Stress14.md)
+* Lifestyles
 
-* [International Physical Activity Questionnaire (IPAQ)]()
+- [Cohen's Stress](Stress14.md)
 
-* [The Pittsburgh Sleep Quality Index (PSQI)]()
+- [International Physical Activity Questionnaire](IPAQ.md) (IPAQ)
 
-* [Personality]()
+- [The Pittsburgh Sleep Quality Index](PSQI.md) (PSQI)
 
-# Eating Behaviors 
+- [Personality](Personality.md)
 
-* [BECS]()
+* Eating Behaviors 
 
-* [Eating Disorder]()
+- [BECS](BECS.md)
 
-* [Food Security]()
+- [Eating Disorder](ED.md)
 
-# Enrivonmental
+- [Food Security](FS.md)
 
-* [CEPS College]()
+- Enrivonmental
 
-* [CEPS High School]()
+- [CEPS College](CEPS_College.md)
 
-* [Priorities]()
+- [CEPS High School](CEPS_HS.md)
 
-* [Readiness]()
+- [Priorities](Priorities.md)
 
+- [Readiness](Readiness.md)
