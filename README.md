@@ -19,7 +19,9 @@ library(Fruved) # load Fruved
 
 Then you can use the available scoring functions as long as the input data frame meet the formating requirements (see specific [instruments](./docs/instrument_list.md) for detail). For example, you may run
 
-> df_out <- DSQ_Score(df_in)
+```
+df_out <- DSQ_Score(df_in)
+```
 
 where `df_in` is the input data frame and `df_out` is the output data frame.
 
