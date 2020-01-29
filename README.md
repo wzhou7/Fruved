@@ -8,11 +8,14 @@ See [list of instruments included](./docs/instrument_list.md).
 
 # How to Use This Package?
 
-To use this package, you will need the `devtools` library to install it from github.
+To use this package, you will need the `devtools` library to install it from github. For example,
 
 > install.packages("devtools") # install devtools
+
 > library(devtools) # load devtools
+
 > install_github("wzhou7/Fruved") # install Fruved
+
 > library(Fruved) # load Fruved
 
 Then you can use the available scoring functions as long as the input data frame meet the formating requirements (see specific [instruments](./docs/instrument_list.md) for detail). For example, you may run
