@@ -1,22 +1,18 @@
 
 # List of Instruments Available
 
-* Basic and Miscellaneous
-- [BMI](BMI.md)
-- [zBMI](zBMI.md)
-- [Race and Ethnicity](RaceEth4.md)
+Basic and Miscellaneous
+* [BMI](BMI.md)
+* [zBMI](zBMI.md)
+* [Race and Ethnicity](RaceEth4.md)
 
-* Dietary
+Dietary
+* [NCI Fruit and Vegetables (FV)](NCIFV.md)
+* [NCI Fat Screener](NCIFat.md)
+* [DSQ](DSQ.md)
+* [sHEI](sHEI.md)
 
-- [NCI Fruit and Vegetables (FV)](NCIFV.md)
-
-- [NCI Fat Screener](NCIFat.md)
-
-- [DSQ](DSQ.md)
-
-- [sHEI](sHEI.md)
-
-* Lifestyles
+Lifestyles
 
 - [Cohen's Stress](Stress14.md)
 
