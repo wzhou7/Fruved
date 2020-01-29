@@ -1,21 +1,23 @@
 
-* Basics and Validated
+# Basic and Validated
 
 These are widely accepted calculations or validated tools.
 
-- [BMI](http://github.com/wzhou7/Fruved/docs/BMI.md)
+* [BMI](BMI.md)
 
-- NCI Fruit and Vegetables (NCIFV)
+* NCI Fruit and Vegetables (NCIFV)
 
-- Cohen's Stress (STRESS)
+* Cohen's Stress (STRESS)
 
-- International Physical Activity Questionnaire (IPAQ)
+* International Physical Activity Questionnaire (IPAQ)
 
-* Newer Tools Implemented
+* [DSQ](DSQ.md)
+
+# Newer Tools Implemented
 
 - BECS
 
-* Newer Tools Developed
+# Newer Tools Developed
 
 - CEPS_College
 
