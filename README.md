@@ -22,4 +22,4 @@ Then you can load the Fruved package
 library(Fruved) # load Fruved
 ```
 
-and use the available functions.
+and use the available functions. Check specific instrument pages for detail.
