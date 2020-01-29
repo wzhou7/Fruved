@@ -14,7 +14,7 @@ df_out <- DSQ_Score(df_in)
 
 where `df_in` is the input data frame and `df_out` is the output data frame.
 
-### Input Data Requirement
+### Input Variables
 
 The input data frame requires the following variables:
 
@@ -23,6 +23,8 @@ The input data frame requires the following variables:
 | Age             |              |        |       |   |
 | Gender          |              |        |       |   |
 |                 |              |        |       |   |
+
+### Output Variables
 
 ## To-Do
 
