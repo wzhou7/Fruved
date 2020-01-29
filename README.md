@@ -1,6 +1,6 @@
 # What Is Fruved?
 
-This package consists of a few survey scoring tools for R users. The tools have been used for health and behaviorial studies associated with the [GetFruved](http://fruved.com/) project. In this project, survey data were collected online using Qualtrics. After [downloading data from Qualtrics](docs/qualtrics.md), functions in this package are used for data cleaning and instrument scoring.
+This package consists of a few survey scoring tools for R users. The tools have been used for health and behaviorial studies associated with the [GetFruved](http://fruved.com/) project. 
 
 # Which Instruments Are Included?
 
