@@ -6,7 +6,7 @@ This package consists of a few survey scoring tools for R users. The tools have 
 
 ## Which Instruments Are Included?
 
-See [list of instruments included](docs/instrument_list.md).
+See [list of instruments included](https://wzhou7.github.io/Fruved/docs/instrument_list.md).
 
 # Usage
 
