@@ -3,7 +3,7 @@
 
 These are widely accepted calculations or validated tools.
 
-- [BMI](blob/master/docs/BMI.md)
+- [BMI](/docs/BMI.md)
 
 - NCI Fruit and Vegetables (NCIFV)
 
