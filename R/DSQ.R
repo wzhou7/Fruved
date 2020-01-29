@@ -1,5 +1,30 @@
-trim <- function (x) gsub("^\\s+|\\s+$", "", x)
-Score_DSQ <- function(data){
+#trim <- function (x) gsub("^\\s+|\\s+$", "", x)
+# library(stringr) => str_trim()
+
+DSQ_label2value <- function(filepathname){
+  
+  # convert labels into coded value
+  if(!codedvalues){
+    # ...
+  }
+}
+
+Score_DSQ <- function(data, codedvalues=TRUE){
+  
+  # check all needed variables are available
+  all_needed_vars <- c()
+  missing_vars <- setdiff(all_needed_vars,names(data))
+  if(length(missing_vars)>0){
+    # ... error("")
+  }
+  
+  # make sure cols are char
+  data <- fixColClasses(data,all_needed_vars)
+  
+  # check possible values - data validation
+  # only coded values shown in the data dictionary allowed (use Wave1 data dictionary)
+  # if unexpecvted values exist, throw an error - information (which variables)
+  
   data$Dsqcertyp1 <- as.character(data$Dsqcertyp1)
   data$Dsqcertyp2 <- as.character(data$Dsqcertyp2)
   gender <- data$gender

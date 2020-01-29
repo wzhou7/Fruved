@@ -5,12 +5,12 @@
 # character string type, and missing values are all coded as 
 # "" - an empty string rather than NA.
 
-fixColClasses <- function(df){
-    for(j in 1:NCOL(df)){
-        old_data <- df[,j]
+fixColClasses <- function(df,vars){
+    for(v in vars){
+        old_data <- df[,v]
         new_data <- as.character(old_data)
         new_data[is.na(new_data)] <- ""
-        df[,j] <- new_data
+        df[,v] <- new_data
     }
     return(df)
 }
