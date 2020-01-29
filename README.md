@@ -4,7 +4,7 @@ This package consists of a few survey scoring tools for R users. The tools have 
 
 # Which Instruments Are Included?
 
-See [list of instruments included](./blob/master/docs/instrument_list.md).
+See [list of instruments included](./docs/instrument_list.md).
 
 # Usage
 
