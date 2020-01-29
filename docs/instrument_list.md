@@ -1,28 +1,46 @@
 
-# Basic and Validated
-
-These are widely accepted calculations or validated tools.
+# Basic and Miscellaneous
 
 * [BMI](BMI.md)
 
-* NCI Fruit and Vegetables (NCIFV)
+* [zBMI](zBMI.md)
 
-* Cohen's Stress (STRESS)
+* [Race and Ethnicity](RaceEth4.md)
+
+# Validated Instruments for Fruved Outcomes
+
+* NCI Fruit and Vegetables (FV)
+
+* NCI Fat Screener
+
+* [Cohen's Stress](Stress14)
 
 * International Physical Activity Questionnaire (IPAQ)
 
 * [DSQ](DSQ.md)
 
-# Newer Tools Implemented
+* Sleep (PSQI)
+
+* Personality
+
+
+# Validated Instruments for Fruved Subprojects 
 
 - BECS
+
+- Eating Disorder
+
+- Food Security
 
 # Newer Tools Developed
 
 - CEPS_College
 
-- CEPS_
+- CEPS_HS
 
+* Priorities
+
+* Readiness
 
 ## Notes in the scoring of instruments
 
