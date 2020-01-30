@@ -1,21 +1,47 @@
 #trim <- function (x) gsub("^\\s+|\\s+$", "", x)
 # library(stringr) => str_trim()
 
-DSQ_label2value <- function(filepathname){
+Score_DSQ <- function(data){
   
-  # convert labels into coded value
-  if(!codedvalues){
-    # ...
-  }
-}
-
-Score_DSQ <- function(data, codedvalues=TRUE){
+  #########################
+  #### Data Validation ####
+  #########################
   
   # check all needed variables are available
-  all_needed_vars <- c()
+  all_needed_vars <- c("gender",
+                       "AGE",
+                       "Dsqmilk1",
+                       "Dsqmilk2",
+                       "Dsqsoda",
+                       "Dsqjuice",
+                       "Dsqcoffee",
+                       "Dsqdrink",
+                       "Dsqfruit",
+                       "Dsqsalad",
+                       "Dsqfried",
+                       "Dsqpotato",
+                       "Dsqbean",
+                       "Dsqgrain",
+                       "Dsqveg",
+                       "Dsqsalsa",
+                       "Dsqpizza",
+                       "Dsqsauce",
+                       "Dsqcheese",
+                       "Dsqmeat",
+                       "Dsqproc",
+                       "Dsqbread",
+                       "Dsqcandy",
+                       "Dsqrolls",
+                       "Dsqcake",
+                       "Dsqice",
+                       "Dsqcorn",
+                       "Dsqcereal",
+                       "Dsqcertyp1",
+                       "Dsqcertyp2")
   missing_vars <- setdiff(all_needed_vars,names(data))
   if(length(missing_vars)>0){
-    # ... error("")
+    stop(paste("There variables are not found:",
+               paste(missing_vars,collapse = ", ")))
   }
   
   # make sure cols are char
@@ -25,11 +51,15 @@ Score_DSQ <- function(data, codedvalues=TRUE){
   # only coded values shown in the data dictionary allowed (use Wave1 data dictionary)
   # if unexpecvted values exist, throw an error - information (which variables)
   
-  data$Dsqcertyp1 <- as.character(data$Dsqcertyp1)
-  data$Dsqcertyp2 <- as.character(data$Dsqcertyp2)
-  gender <- data$gender
+  ######################
+  #### Demographics ####
+  ######################
+  
+  gender <- data$gender # need to ensure gender coding correct
+  
+  # AGE is an integer
+  data$AGE <- round(as.numeric(data$AGE)) # ensure there is no AGE=2.5
   data$AGEGRP <- rep(NA,nrow(data))
-  data$agecut <- rep(NA,nrow(data))
   data$AGEGRP[data$AGE>=2 & data$AGE<=3] <- 1
   data$AGEGRP[data$AGE>=4 & data$AGE<=5] <- 2
   data$AGEGRP[data$AGE>=6 & data$AGE<=7] <- 3
@@ -46,9 +76,14 @@ Score_DSQ <- function(data, codedvalues=TRUE){
   data$AGEGRP[data$AGE>=68 & data$AGE<=77] <- 14
   data$AGEGRP[data$AGE>=78] <- 15
   
+  data$agecut <- rep(NA,nrow(data))
   data$agecut[data$AGEGRP>=1 & data$AGEGRP<=5] <- 3
   data$agecut[data$AGEGRP>=6 & data$AGEGRP<=8] <- 4
   data$agecut[data$AGEGRP>=9 & data$AGEGRP<=15] <- 2
+  
+  ###################
+  #### Frequency ####
+  ###################
   
   # hccerxpd='number of times per day eat hot or cold cereal'
   hccerxpd <- rep(NA,nrow(data))
@@ -62,6 +97,7 @@ Score_DSQ <- function(data, codedvalues=TRUE){
   hccerxpd[data$Dsqcereal==8] <- 1
   hccerxpd[data$Dsqcereal==9] <- 2
   summary(factor(hccerxpd))
+  
   # milkxpd='number of times per day drink milk'
   milkxpd <- rep(NA,nrow(data))
   milkxpd[data$Dsqmilk1==1] <- 0
@@ -76,6 +112,7 @@ Score_DSQ <- function(data, codedvalues=TRUE){
   milkxpd[data$Dsqmilk1==10] <- 4.5
   milkxpd[data$Dsqmilk1==11] <- 6
   summary(factor(milkxpd))
+  
   # sodaxpd='number of times per day drink soda'
   sodaxpd <- rep(NA,nrow(data))
   sodaxpd[data$Dsqsoda==1] <- 0
@@ -104,6 +141,7 @@ Score_DSQ <- function(data, codedvalues=TRUE){
   frtjcxpd[data$Dsqjuice==10] <- 4.5
   frtjcxpd[data$Dsqjuice==11] <- 6
   summary(factor(frtjcxpd))
+  
   # swtctxpd='number of times per day drink sweet coffee/tea'
   swtctxpd <- rep(NA,nrow(data))
   swtctxpd[data$Dsqcoffee==1] <- 0
@@ -375,6 +413,10 @@ Score_DSQ <- function(data, codedvalues=TRUE){
   dtdcer <- rep(NA,nrow(data))
   dtdcer1 <- rep(NA,nrow(data))
   dtdcer2 <- rep(NA,nrow(data))
+  
+  
+  data$Dsqcertyp1 <- as.character(data$Dsqcertyp1)
+  data$Dsqcertyp2 <- as.character(data$Dsqcertyp2)
   
   for(k in 1:nrow(data)){
     x <- data$Dsqcertyp1[k]
@@ -815,16 +857,15 @@ Score_DSQ <- function(data, codedvalues=TRUE){
     }
   }
   
-  out <- as.data.frame(matrix(NA,nrow=nrow(data),ncol=9))
-  names(out) <- c("predfib","predcalc","predsug","predsugnc","predwhgrn","preddairy","predfvl","predfvlnf","predssb")
-  out$predfib <- predfib
-  out$predcalc <- predcalc
-  out$predsug <- predsug
-  out$predsugnc <- predsugnc
-  out$predwhgrn <- predwhgrn
-  out$preddairy <- preddairy
-  out$predfvl <- predfvl
-  out$predfvlnf <- predfvlnf
-  out$predssb <- predssb
+  out <- data.frame(predfib = predfib,
+                    predfib = predfib,
+                    predcalc = predcalc,
+                    predsug = predsug,
+                    predsugnc = predsugnc,
+                    predwhgrn = predwhgrn,
+                    preddairy = preddairy,
+                    predfvl = predfvl,
+                    predfvlnf = predfvlnf,
+                    predssb = predssb)
   return(out)
 }
