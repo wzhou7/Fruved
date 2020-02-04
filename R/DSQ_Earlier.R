@@ -1,15 +1,15 @@
 #trim <- function (x) gsub("^\\s+|\\s+$", "", x)
 # library(stringr) => str_trim()
 
-Score_DSQ <- function(data){
+Score_DSQ_Earlier <- function(data){
   
   #########################
   #### Data Validation ####
   #########################
   
   # check all needed variables are available
-  all_needed_vars <- c("gender",
-                       "AGE",
+  all_needed_vars <- c("Gender",
+                       "Age",
                        "Dsqmilk1",
                        "Dsqmilk2",
                        "Dsqsoda",
@@ -43,6 +43,9 @@ Score_DSQ <- function(data){
     stop(paste("There variables are not found:",
                paste(missing_vars,collapse = ", ")))
   }
+  
+  names(data)[names(data)=="Gender"] <- "gender"
+  names(data)[names(data)=="Age"] <- "AGE"
   
   # make sure cols are char
   data <- fixColClasses(data,all_needed_vars)

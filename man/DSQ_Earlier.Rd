@@ -2,13 +2,13 @@
 \alias{DSQ}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Scoring of the 26-item Dietary Screener Questionnaire (DSQ)
+Scoring of the 26-item Dietary Screener Questionnaire (DSQ) - Earlier Method
 }
 \description{
 The function returns the computed diet variables for the Dietary Screener Questionnaire in NHANES 2009-10.
 }
 \usage{
-Score_DSQ(data)
+Score_DSQ_Earlier(data)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -17,8 +17,8 @@ Score_DSQ(data)
 The data needs to name the survey variables as follows,
 
   \describe{
-  \item{\code{AGE}}{age of a unit}
-  \item{\code{gender}}{gender of a unit: 1=male; 2=female}
+  \item{\code{Age}}{age of a unit}
+  \item{\code{Gender}}{gender of a unit: 1=male; 2=female}
   }
 
 During the past month, how often did you drink ...

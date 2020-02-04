@@ -2,13 +2,13 @@
 \alias{DSQ}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Scoring of the 26-item Dietary Screener Questionnaire (DSQ)
+Scoring of the 26-item Dietary Screener Questionnaire (DSQ) - Current Method
 }
 \description{
 The function returns the computed diet variables for the Dietary Screener Questionnaire in NHANES 2009-10.
 }
 \usage{
-Score_DSQ(data)
+Score_DSQ_Current(data)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -17,8 +17,8 @@ Score_DSQ(data)
 The data needs to name the survey variables as follows,
 
   \describe{
-  \item{\code{AGE}}{age of a unit}
-  \item{\code{gender}}{gender of a unit: 1=male; 2=female}
+  \item{\code{Age}}{age of a unit}
+  \item{\code{Gender}}{gender of a unit: 1=male; 2=female}
   }
 
 During the past month, how often did you drink ...
@@ -168,18 +168,44 @@ During the past month, how often did you eat...
 \details{
 }
 \value{
-\item{predfib}{Predicted fiber (gm) per day}
-\item{predcalc}{Predicted calcium (mg) per day}
-\item{predsug}{Predicted added sugars (tsp) per day}
-\item{predsugnc}{Predicted added sugars (tsp) per day, not using cereal}
-\item{predwhgr}{Predicted ounce equivalents of whole grains per day}
-\item{preddairy}{Predicted cup equivalents of dairy per day}
-\item{predfvl}{Predicted cup equivalents of fruits and vegetables (including legumes) per day}
-\item{predfvlnf}{Predicted cup equivalents of fruits and vegetables (including legumes) except French fries per day}
-\item{predssb}{Predicted added sugars (tsp) from sugar-sweetened beverages}
+\item{DSQfvl}{Predicted intake of fruits and vegetables including legumes and French fries (cup equivalents) per day}
+\item{DSQfvlnf}{Predicted intake of fruits and vegetables including legumes and excluding French fries (cup equivalents) per day}
+\item{DSQfrt}{Predicted intake of fruits (cup equivalents) per day}
+\item{DSQvlall}{Predicted intake of vegetables including legumes and French fries (cup equivalents) per day}
+\item{DSQvlnf}{Predicted intake of vegetables including legumes and excluding French fries (cup equivalents) per day}
+\item{DSQdairy}{Predicted intake of dairy (cup equivalents) per day}
+\item{DSQsug}{Predicted intake of total added sugars (tsp equivalents) per day}
+\item{DSQssb}{Predicted intake of added sugars from sugar-sweetened beverages (tsp equivalents) per day}
+\item{DSQwhgr}{Predicted intake of whole grains (ounce equivalents) per day}
+\item{DSQfib}{Predicted intake of fiber (gm) per day}
+\item{DSQcalc}{Predicted intake of calcium (mg) per day}
+
+\item{DSQfvl_low}{Predicted probability of eating less than 1.7 cup equivalents of fruits and vegetables including legumes and French fries}
+\item{DSQfvlnf_low}{Predicted probability of eating less than 1.7 cup equivalents fruits and vegetables including legumes and excluding French fries}
+\item{DSQfrt_low}{Predicted probability of eating less than 0.5 cup equivalents of fruits}
+\item{DSQvlall_low}{Predicted probability of eating less than 1.0 cup equivalents of vegetables including legumes and French fries}
+\item{DSQvlnf_low}{Predicted probability of eating less than 1.0 cup equivalents vegetables including legumes and excluding French fries}
+\item{DSQdairy_low}{Predicted probability of eating less than 1.2 cup equivalents of dairy}
+\item{DSQsug_low}{Predicted probability of eating less than 11 tsp equivalents of total added sugars}
+\item{DSQssb_low}{Predicted probability of eating less than 3 tsp equivalents added sugars from sugar-sweetened beverages}
+\item{DSQwhgr_low}{Predicted probability of eating less than 0.3 ounce equivalents of whole grains}
+\item{DSQfib_low}{Predicted probability of eating less than 12 grams of fiber}
+\item{DSQcalc_low}{Predicted probability of eating less than 800 milligrams of calcium}
+
+\item{DSQfvl_high}{Predicted probability of eating equal or more than 3.2 cup equivalents of fruits and vegetables including legumes and French fries}
+\item{DSQfvlnf_high}{Predicted probability of eating equal or more than 3.2 cup equivalents fruits and vegetables including legumes and excluding French fries}
+\item{DSQfrt_high}{Predicted probability of eating equal or more than 1.4 cup equivalents of fruits}
+\item{DSQvlall_high}{Predicted probability of eating equal or more than 1.8 cup equivalents of vegetables including legumes and French fries}
+\item{DSQvlnf_high}{Predicted probability of eating equal or more than 1.8 cup equivalents vegetables including legumes and excluding French fries}
+\item{DSQdairy_high}{Predicted probability of eating equal or more than 2.4 cup equivalents of dairy}
+\item{DSQsug_high}{Predicted probability of eating equal or more than 23 tsp equivalents of total added sugars}
+\item{DSQssb_high}{Predicted probability of eating equal or more than 11 tsp equivalents added sugars from sugar-sweetened beverages}
+\item{DSQwhgr_high}{Predicted probability of eating equal or more than 1.0 ounce equivalents of whole grains}
+\item{DSQfib_high}{Predicted probability of eating equal or more than 19 grams of fiber}
+\item{DSQcalc_high}{Predicted probability of eating equal or more than 1100 milligrams of calcium}
 }
 \references{
-https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/earlier/
+https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/
 }
 \author{
 Wangcheng Yan, Wenjun Zhou
