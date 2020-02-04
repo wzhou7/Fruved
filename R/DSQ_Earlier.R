@@ -859,7 +859,6 @@ Score_DSQ_Earlier <- function(data){
   }
   
   out <- data.frame(predfib = predfib,
-                    predfib = predfib,
                     predcalc = predcalc,
                     predsug = predsug,
                     predsugnc = predsugnc,
