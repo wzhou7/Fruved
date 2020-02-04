@@ -44,8 +44,7 @@ Score_DSQ_Earlier <- function(data){
                paste(missing_vars,collapse = ", ")))
   }
   
-  names(data)[names(data)=="Gender"] <- "gender"
-  names(data)[names(data)=="Age"] <- "AGE"
+ 
   
   # make sure cols are char
   data <- fixColClasses(data,all_needed_vars)
@@ -57,7 +56,8 @@ Score_DSQ_Earlier <- function(data){
   ######################
   #### Demographics ####
   ######################
-  
+  names(data)[names(data)=="Gender"] <- "gender"
+  names(data)[names(data)=="Age"] <- "AGE"
   gender <- data$gender # need to ensure gender coding correct
   
   # AGE is an integer
