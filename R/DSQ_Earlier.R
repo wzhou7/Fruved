@@ -44,8 +44,6 @@ Score_DSQ_Earlier <- function(data){
                paste(missing_vars,collapse = ", ")))
   }
   
- 
-  
   # make sure cols are char
   data <- fixColClasses(data,all_needed_vars)
   
