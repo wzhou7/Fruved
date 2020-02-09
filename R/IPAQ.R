@@ -31,6 +31,23 @@ Score_IPAQ <- function(df){
         if(!is.na(x3[i]) & x3[i]==0){Moderate[i] <- 0}
         if(!is.na(x1[i]) & x1[i]==0){Vigorous[i] <- 0}
     }
+    
     Total <- Walking + Moderate + Vigorous
+    
+    out <- data.frame(WalkingDays = x5,
+                      WalkingMins = x6,
+                      WalkingMETS = Walking,
+                      
+                      ModerateDays = x3,
+                      ModerateMins = x4,
+                      ModerateMETS = Moderate,
+                      
+                      VigorousDays = x1,
+                      VigorousMins = x2,
+                      VigorousMETS = Vigorous,
+                      
+                      Total = Total)
+    
+    
     return(Total)
 }
