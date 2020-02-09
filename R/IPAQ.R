@@ -46,8 +46,8 @@ Score_IPAQ <- function(df){
                       VigorousMins = x2,
                       VigorousMETS = Vigorous,
                       
-                      Total = Total)
+                      TotalMETS = Total)
     
     
-    return(Total)
+    return(out)
 }
