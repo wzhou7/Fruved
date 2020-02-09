@@ -8,7 +8,8 @@ See [list of instruments included](./docs/instrument_list.md).
 
 # How to Use This Package?
 
-To use this package, you will need the `devtools` library to install it from github. For example,
+To use this package, you will need the `devtools` library to install it from github. 
+For example, 
 
 ```
 install.packages("devtools") # install devtools
@@ -16,10 +17,11 @@ library(devtools) # load devtools
 install_github("wzhou7/Fruved") # install Fruved
 ```
 
-Then you can load the Fruved package
+The above code needs to be run just once.
+Then, you can load the Fruved package each time you are ready to use it:
 
 ```
 library(Fruved) # load Fruved
 ```
 
-and use the available functions. Check specific instrument pages for detail.
+Check specific instrument pages for details about each available function.
