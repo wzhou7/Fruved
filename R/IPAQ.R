@@ -22,14 +22,36 @@ Score_IPAQ <- function(df){
     x6[df$IPAQ6==20] <- NA
     x6[df$IPAQ6==21] <- NA
     
-    Walking <- Moderate <- Vigorous <- rep(NA,nrow(df))
+    Walking <- Moderate <- Vigorous <- Category <- rep(NA,nrow(df))
     for(i in 1:nrow(df)){
-        if(!is.na(x5[i]) & !is.na(x6[i])){Walking[i] <- 3.3*x5[i]*x6[i]}
-        if(!is.na(x3[i]) & !is.na(x4[i])){Moderate[i] <- 4*x3[i]*x4[i]}
-        if(!is.na(x1[i]) & !is.na(x2[i])){Vigorous[i] <- 8*x1[i]*x2[i]}
-        if(!is.na(x5[i]) & x5[i]==0){Walking[i] <- 0}
-        if(!is.na(x3[i]) & x3[i]==0){Moderate[i] <- 0}
-        if(!is.na(x1[i]) & x1[i]==0){Vigorous[i] <- 0}
+      if(!is.na(x5[i]) & !is.na(x6[i])){Walking[i] <- 3.3*x5[i]*x6[i]}
+      if(!is.na(x3[i]) & !is.na(x4[i])){Moderate[i] <- 4*x3[i]*x4[i]}
+      if(!is.na(x1[i]) & !is.na(x2[i])){Vigorous[i] <- 8*x1[i]*x2[i]}
+      if(!is.na(x5[i]) & x5[i]==0){Walking[i] <- 0}
+      if(!is.na(x3[i]) & x3[i]==0){Moderate[i] <- 0}
+      if(!is.na(x1[i]) & x1[i]==0){Vigorous[i] <- 0}
+      
+      cond1 <- !is.na(x1[i]) & x1[i]>=3 & Vigorous[i]>=1500
+      cond2 <- sum(c(x1[i],x3[i],x5[i]),na.rm=TRUE)>=7 & 
+        sum(c(Vigorous[i],Moderate[i],Walking[i]),na.rm=TRUE)>=3000
+      cond3 <- !is.na(x1[i]) & x1[i]>=3 & !is.na(x2[i]) & x2[i]>=20
+      cond4 <- sum(c(x3[i],x5[i]),na.rm=TRUE)>=5 & sum(c(x4[i],x6[i]),na.rm=TRUE)>=30
+      cond5 <- sum(c(x1[i],x3[i],x5[i]),na.rm=TRUE)>=5 & 
+        sum(c(Vigorous[i],Moderate[i],Walking[i]),na.rm=TRUE)>=600
+      
+      if(cond3 | cond4 | cond5){
+        Category[i] <- "Moderate"
+      }
+      
+      if(cond1 | cond2){
+        Category[i] <- "High"
+      }
+      
+      if(!is.na(Walking[i]) & !is.na(Moderate[i]) & !is.na(Vigorous[i]) & 
+         !(cond1 | cond2 | cond3 | cond4 | cond5)){
+        Category[i] <- "Low"
+      }
+        
     }
     
     Total <- Walking + Moderate + Vigorous
@@ -46,7 +68,8 @@ Score_IPAQ <- function(df){
                       VigorousMins = x2,
                       VigorousMETS = Vigorous,
                       
-                      TotalMETS = Total)
+                      TotalMETS = Total,
+                      Category = Category)
     
     
     return(out)

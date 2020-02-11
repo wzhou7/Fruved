@@ -13,6 +13,36 @@ Walking MET-minutes/week = 3.3 * walking minutes * walking days
 Moderate MET-minutes/week = 4.0 * moderate-intensity activity minutes * moderate days
 
 Vigorous MET-minutes/week = 8.0 * vigorous-intensity activity minutes * vigorous-intensity days
+
+Categorical Score
+
+Three levels (categories) of physical activity are proposed:
+
+Category 1: Low
+
+This is the lowest level of physical activity. Those individuals who not meet criteria for categories 2 or 3 are considered low/inactive.
+
+Category 2: Moderate
+
+Any one of the following 3 criteria:
+
+1) 3 or more days of vigorous activity of at least 20 minutes per day OR
+
+2) 5 or more days of moderate-intensity activity or walking of at least 30 minutes
+per day OR
+
+3) 5 or more days of any combination of walking, moderate-intensity or vigorous
+intensity activities achieving a minimum of at least 600 MET-min/week.
+
+Category 3: High
+
+Any one of the following 2 criteria:
+
+1) Vigorous-intensity activity on at least 3 days and accumulating at least 1500 MET-minutes/
+week OR
+
+2) 7 or more days of any combination of walking, moderate-intensity or vigorous
+intensity activities achieving a minimum of at least 3000 MET-minutes/week 
 }
 \usage{
 Score_IPAQ(data)
