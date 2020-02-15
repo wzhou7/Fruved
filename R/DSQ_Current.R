@@ -3,6 +3,8 @@
 
 Score_DSQ_Current <- function(data){
   
+  Dsqcertyp <- Dsqcertyp_Current
+  
   #########################
   #### Data Validation ####
   #########################
