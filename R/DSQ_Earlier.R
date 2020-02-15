@@ -2,9 +2,7 @@
 # library(stringr) => str_trim()
 
 Score_DSQ_Earlier <- function(data){
-  
-  Dsqcertyp <- Dsqcertyp_Earlier
-  
+
   #########################
   #### Data Validation ####
   #########################

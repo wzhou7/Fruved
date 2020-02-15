@@ -3,7 +3,8 @@
 
 Score_DSQ_Current <- function(data){
   
-  Dsqcertyp <- Dsqcertyp_Current
+  Dsqcertyp$Name[Dsqcertyp$Name=="Fruit & Fibre (fiber) with Peaches, Raisins, Almonds, and Oat Clust"] <- "Fruit & Fibre (fiber) with Peaches, Raisins, Almonds, and Oat Clusters"
+  Dsqcertyp$Name[Dsqcertyp$Name=="Oatmeal, cooked, quick (1 or 3 minutes), NS as to fat added in cook"] <- "Oatmeal, cooked, quick (1 or 3 minutes), NS as to fat added in cooking"
   
   #########################
   #### Data Validation ####
