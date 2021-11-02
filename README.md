@@ -35,14 +35,14 @@ This `Fruved` package includes the following instruments:
 * [Food Security](FS.md)
 * [BECS](BECS.md)
 
-If you are looking for one of the following instruments, refer to the [DietQ](https://github.com/wzhou7/DietQ) package.
+If you are looking for one of the following instruments, refer to the [`DietQ`](https://github.com/wzhou7/DietQ) package.
 * Short Healthy Eating Index (sHEI)
 * Healthy Eating Index (HEI) using NDSR
 * NCI's Dietary Screener Questionnaire (DSQ)
 * NCI's Percentage Energy from Fat Screener (NCIFat)
 * NCT's Fruit & Vegetable Intake Screener (NCIFV)
 
-If you are looking for one of the following instruments, refer to the [CampusEnv](https://github.com/wzhou7/CampusEnv) package.
+If you are looking for one of the following instruments, refer to the [`CampusEnv`](https://github.com/wzhou7/CampusEnv) package.
 
 * CEPS
 * Priorities
