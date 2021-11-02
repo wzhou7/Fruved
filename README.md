@@ -2,10 +2,6 @@
 
 This package consists of a few survey scoring tools for R users. The tools have been used for health and behaviorial studies associated with the [GetFruved](http://fruved.com/) project. 
 
-# Which Instruments Are Included?
-
-See [list of instruments included](./docs/instrument_list.md).
-
 # How to Use This Package?
 
 To use this package, you will need the `devtools` library to install it from github. 
@@ -25,3 +21,17 @@ library(Fruved) # load Fruved
 ```
 
 Check specific instrument pages for details about each available function.
+
+# Which Instruments Are Included?
+
+* [zBMI](BMI.md)
+* [Cohen's Stress](Stress14.md)
+* [International Physical Activity Questionnaire](IPAQ.md) (IPAQ)
+* [The Pittsburgh Sleep Quality Index](PSQI.md) (PSQI)
+* [Personality](Personality.md)
+* [Eating Disorder](ED.md)
+* [Food Security](FS.md)
+* [BECS](BECS.md)
+* [CEPS](CEPS.md)
+* [Priorities](Priorities.md)
+* [Readiness](Readiness.md)
