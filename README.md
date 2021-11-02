@@ -25,12 +25,12 @@ Check specific instrument pages for details about each available function.
 # Which Instruments Are Included?
 
 This `Fruved` package includes the following instruments: 
-* [zBMI](BMI.md)
-* [Cohen's Stress](Stress14.md)
+* [Body Mass Index](BMI.md) (BMI) and Growth Chart Standardized BMI (zBMI)
+* [Cohen's 14-Item Stress Scale](Stress14.md)
 * [International Physical Activity Questionnaire](IPAQ.md) (IPAQ)
 * [Pittsburgh Sleep Quality Index](PSQI.md) (PSQI)
 * [Short Pittsburgh Sleep Quality Index](sPSQI.md) (PSQI)
-* [Personality](Personality.md)
+* [10-Item Personality](Personality.md)
 * [Eating Disorder](ED.md)
 * [Food Security](FS.md)
 * [BECS](BECS.md)
