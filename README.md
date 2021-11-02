@@ -45,5 +45,6 @@ If you are looking for one of the following instruments, refer to the [`DietQ`](
 If you are looking for one of the following instruments, refer to the [`CampusEnv`](https://github.com/wzhou7/CampusEnv) package.
 
 * CEPS
+* 41 Points
 * Priorities
 * Readiness
