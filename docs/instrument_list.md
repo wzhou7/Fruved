@@ -1,18 +1,8 @@
 
 # List of Instruments Available
 
-Basic and Miscellaneous
 * [BMI](BMI.md)
 * [zBMI](zBMI.md)
-* [Race and Ethnicity](RaceEth4.md)
-
-Dietary
-* [NCI Fruit and Vegetables](NCIFV.md) (FV)
-* [NCI Fat Screener](NCIFat.md)
-* [Dietary Screener Questionnaire - Earlier Methods](DSQ.md) (DSQ)
-* [Dietary Screener Questionnaire - Current Methods](DSQ2.md) (DSQ2)
-* [Healthy Eating Index using NDSR](NDSR.md) (HEI-NDSR)
-* [Short Healthy Eating Index](sHEI.md) (sHEI)
 
 Lifestyles
 * [Cohen's Stress](Stress14.md)
