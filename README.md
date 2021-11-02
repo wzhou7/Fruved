@@ -33,7 +33,6 @@ This `Fruved` package includes the following instruments:
 * [10-Item Personality](Personality.md)
 * [26-Item Eating Disorder](ED.md)
 * [Food Security](FS.md)
-* [Behavior, Environment, and Changeability Survey](BECS.md) (BECS)
 
 If you are looking for one of the following dietary instruments, refer to the [`DietQ`](https://github.com/wzhou7/DietQ) package.
 * Short Healthy Eating Index (sHEI)
@@ -44,6 +43,7 @@ If you are looking for one of the following dietary instruments, refer to the [`
 
 If you are looking for one of the following instruments, refer to the [`CampusEnv`](https://github.com/wzhou7/CampusEnv) package.
 
+* Behavior, Environment, and Changeability Survey (BECS)
 * CEPS
 * 41 Points
 * Priorities
