@@ -29,7 +29,7 @@ This `Fruved` package includes the following instruments:
 * [Cohen's 14-Item Stress Scale](Stress14.md)
 * [International Physical Activity Questionnaire](IPAQ.md) (IPAQ)
 * [Pittsburgh Sleep Quality Index](PSQI.md) (PSQI)
-* [Short Pittsburgh Sleep Quality Index](sPSQI.md) (PSQI)
+* [Short Pittsburgh Sleep Quality Index](sPSQI.md) (sPSQI)
 * [10-Item Personality](Personality.md)
 * [Eating Disorder](ED.md)
 * [Food Security](FS.md)
