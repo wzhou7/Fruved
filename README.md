@@ -14,7 +14,7 @@ install_github("wzhou7/Fruved") # install Fruved
 ```
 
 The above code needs to be run just once.
-Then, you can load the Fruved package each time you are ready to use it:
+Then, you can load the `Fruved` package each time of use:
 
 ```
 library(Fruved) # load Fruved
@@ -31,9 +31,9 @@ This `Fruved` package includes the following instruments:
 * [Pittsburgh Sleep Quality Index](PSQI.md) (PSQI)
 * [Short Pittsburgh Sleep Quality Index](sPSQI.md) (sPSQI)
 * [10-Item Personality](Personality.md)
-* [Eating Disorder](ED.md)
+* [26-Item Eating Disorder](ED.md)
 * [Food Security](FS.md)
-* [BECS](BECS.md)
+* [Behavior, Environment, and Changeability Survey](BECS.md) (BECS)
 
 If you are looking for one of the following dietary instruments, refer to the [`DietQ`](https://github.com/wzhou7/DietQ) package.
 * Short Healthy Eating Index (sHEI)
