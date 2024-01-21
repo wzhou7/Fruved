@@ -29,9 +29,7 @@ data$cdc_age_month <- CDC_AgeMonth(data, birth_date="DOB", data_date = "StartDat
 
 After calculating age in months, we can categorize BMI:
 ```
-Score_zBMI <- function(data, wt="WeightLB", ht = "HeightIN", 
-                       wt_unit = "lb", ht_unit = "in", 
-                       cdc_age_month = "cdc_age_month", gender = "Gender")
+data <- Score_zBMI(data, cdc_age_month = "cdc_age_month", gender = "Gender")
 ```
 
 Note: infants less than 2 years old will not have a BMI category.

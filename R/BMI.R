@@ -98,12 +98,7 @@ CDC_AgeMonth_fromDOB <- function(data, birth_date="DOB", data_date = "StartDate"
     return(cdc_age_month)
 }
 
-Score_zBMI <- function(data, wt="WeightLB", ht = "HeightIN", 
-                       wt_unit = "lb", ht_unit = "in", 
-                       cdc_age_month = "cdc_age_month", gender = "Gender"){
-    
-    # non-infant: calculate BMI as usual
-    data <- Score_BMI_Adults(data, wt, ht, wt_unit, ht_unit)
+Score_zBMI <- function(data, cdc_age_month = "cdc_age_month", gender = "Gender"){
     
     # missing age: BMI category will not be known
     data[,"AgeMonths"] <- data[,cdc_age_month]
@@ -171,12 +166,9 @@ Score_BMI <- function(data, wt = "WeightLB", ht = "HeightIN",
         data_adults <- subset(data_noninfant, data$cdc_age_month>240.5)
         data_children <- subset(data_noninfant, data$cdc_age_month<=240.5)
         
-        # adults score as usual
-        data_adults <- Score_BMI_Adults(data_adults, wt, ht, wt_unit, ht_unit)
-        
-        # children need to check age and gender group
-        data_children <- Score_zBMI(data_children, wt, ht, wt_unit, ht_unit, 
-                                    cdc_age_month = "cdc_age_month", gender)
+        # children BMI_Categories depends on age and gender group
+        data_children$BMI_Categories <- NULL
+        data_children <- Score_zBMI(data_children, cdc_age_month = "cdc_age_month", gender)
         data <- rbind(data_adults, data_children)
         
         data_infant$BMI <- NA
