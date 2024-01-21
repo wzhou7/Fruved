@@ -2,7 +2,7 @@
 \alias{Stress14}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Scoring of the ``Stress14'' survey
+Scoring of Cohen's 14-Item Perceived Stress Scale (CPSS)
 }
 \description{
 The function returns the stress score given the data. 
@@ -55,6 +55,7 @@ Wangcheng Yan, Wenjun Zhou
 }
 \note{
 %%  ~~further notes~~
+More Info: http://www.midss.org/content/perceived-stress-scale-pss
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
