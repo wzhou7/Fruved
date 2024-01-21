@@ -2,9 +2,10 @@
 
 The BMI is often used as a cost effective screening tool for a variety of health metrics.
 For children and teens, their BMIs should incorporate the growth chart. 
-See [Growth Chart Standardized BMI](zBMI.md) (zBMI).
+See [Growth Chart Standardized BMI](zBMI.md) (zBMI). 
+For adults, see below.
 
-For adults, the BMI is calculated as a person's weight in kilograms 
+The BMI is calculated as a person's weight in kilograms 
 divided by the square of height in meters. The calculation formula is: 
 
 $$
@@ -40,12 +41,11 @@ Be careful of specifying the correct measurement units, so the numbers will be c
 
 If the weight is not measured in kilograms or the height is not measured in meters 
 in your raw data, unit conversion is needed. 
-
 In the above example, units will be converted automatically. 
-If you would like to convert the units and save the converted values in the data frame,
+If you would like to convert the unit for the height and/or weight (without calculating BMI),
 follow this example:
 
 ```
-data$WtKG <- ConvertWt(data, wt = "WeightLB", wt_unit = "lb")
-data$HtM <- ConvertHt(data, ht = "HeightIN", ht_unit = "in")
+data$WeightKG <- ConvertWt(data, wt = "WeightLB", wt_unit = "lb")
+data$HeightM <- ConvertHt(data, ht = "HeightIN", ht_unit = "in")
 ```

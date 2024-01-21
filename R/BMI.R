@@ -1,25 +1,3 @@
-ConvertWt <- function(data, wt = "WeightLB", wt_unit = "lb"){
-    # convert weight into KG
-    wt_unit <- tolower(wt_unit)
-    if(wt_unit=="lb"){
-        WeightKG <- data[,wt] * 0.45359237 # pound to kilogram
-        return(WeightKG)
-    } else {
-        stop(paste("The unit",wt_unit,"is not implemented!"))
-    }
-}
-
-ConvertHt <- function(data, ht = "HeightIN", ht_unit = "in"){
-    # convert height into M
-    ht_unit <- tolower(ht_unit)
-    if(ht_unit=="in"){
-        HeightM <- data[,ht] * 0.0254 # inch to meter
-        return(HeightM)
-    } else {
-        stop(paste("The unit",ht_unit,"is not implemented!"))
-    }
-}
-
 flag_plausible <- function(x, type="weight", min_plausible=2, max_plausible=800){
     y <- rep("", length(x))
     y[is.na(x)] <- paste("missing", type)
@@ -47,7 +25,43 @@ flag_outlier <- function(x, type, y){
     return(y)
 }
 
-Score_BMI <- function(data, data, wt="WeightLB", ht = "HeightIN", wt_unit = "lb", ht_unit = "in"){
+ConvertWt <- function(data, wt = "WeightLB", wt_unit = "lb"){
+    wt_unit <- tolower(wt_unit)
+    if(wt_unit %in% c("lb","kg")){
+        # convert implemented units to kg
+        if(wt_unit=="lb"){
+            data$WeightKG <- data[,wt] * 0.45359237 # pound to kilogram
+        } else {
+            data$WeightKG <- data[,wt]
+        }
+        # flag implausible values and outliers
+        data$WeightFlag <- flag_plausible(data$WeightKG, "weight", min_plausible=2, max_plausible=800)
+        data$WeightFlag <- flag_outlier(data$WeightKG, "weight", data$WeightFlag)
+        return(data)
+    } else {
+        stop(paste("The unit",wt_unit,"is not implemented!"))
+    }
+}
+
+ConvertHt <- function(data, ht = "HeightIN", ht_unit = "in"){
+    ht_unit <- tolower(ht_unit)
+    if(ht_unit %in% c("in","m")){
+        # convert implemented units to meter
+        if(ht_unit=="in"){
+            data$HeightM <- data[,ht] * 0.0254 # inch to meter
+        } else {
+            data$HeightM <- data[,ht]
+        }
+        # flag implausible values and outliers
+        data$HeightFlag <- flag_plausible(data$HeightM, "height", min_plausible=0.5, max_plausible=3.0)
+        data$HeightFlag <- flag_outlier(data$HeightM, "height", data$HeightFlag)
+        return(data)
+    } else {
+        stop(paste("The unit",ht_unit,"is not implemented!"))
+    }
+}
+
+Score_BMI <- function(data, wt="WeightLB", ht = "HeightIN", wt_unit = "lb", ht_unit = "in"){
     
     # if these variables already exist, rename them
     varnames <- c("WeightKG","WeightFlag","HeightM","HeightFlag","BMI","BMIFlag","BMI_Category")
@@ -57,28 +71,10 @@ Score_BMI <- function(data, data, wt="WeightLB", ht = "HeightIN", wt_unit = "lb"
     }
     
     # convert weight into KG
-    wt_unit <- tolower(wt_unit)
-    if(wt_unit!="kg"){
-        data$WeightKG <- ConvertWt(data[,wt])
-    } else {
-        data$WeightKG <- data[,wt]
-    }
-    
-    # flag implausible values and outliers
-    data$WeightFlag <- flag_plausible(data$WeightKG, "weight", min_plausible=2, max_plausible=800)
-    data$WeightFlag <- flag_outlier(data$WeightKG, "weight", data$WeightFlag)
+    data <- ConvertWt(data, wt, wt_unit)
     
     # convert height into M
-    ht_unit <- tolower(ht_unit)
-    if(ht_unit!="m"){
-        data$HeightM <- ConvertHt(data[,ht])
-    } else {
-        data$HeightM <- data[,ht]
-    }
-    
-    # flag implausible values and outliers
-    data$HeightFlag <- flag_plausible(data$HeightM, "height", min_plausible=0.5, max_plausible=3.0)
-    data$HeightFlag <- flag_outlier(data$HeightM, "height", data$HeightFlag)
+    data <- ConvertHt(data, ht, ht_unit)
     
     # calculate BMI
     data$BMI <- data$WeightKG/data$HeightM/data$HeightM
