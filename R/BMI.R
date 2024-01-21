@@ -61,7 +61,7 @@ ConvertHt <- function(data, ht = "HeightIN", ht_unit = "in"){
     }
 }
 
-Score_BMI <- function(data, wt="WeightLB", ht = "HeightIN", wt_unit = "lb", ht_unit = "in"){
+Score_BMI_Adults <- function(data, wt="WeightLB", ht = "HeightIN", wt_unit = "lb", ht_unit = "in"){
     
     # if these variables already exist, rename them
     varnames <- c("WeightKG","WeightFlag","HeightM","HeightFlag","BMI","BMIFlag","BMI_Category")
@@ -90,5 +90,99 @@ Score_BMI <- function(data, wt="WeightLB", ht = "HeightIN", wt_unit = "lb", ht_u
     data$BMI_Category[(!is.na(data$BMI))&(data$BMI>=25)&(data$BMI<30)] <- "Overweight"
     data$BMI_Category[(!is.na(data$BMI))&(data$BMI>=30)] <- "Obesity"
     
+    return(data)
+}
+
+CDC_AgeMonth_fromDOB <- function(data, birth_date="DOB", data_date = "StartDate"){
+    cdc_age_month <- difftime(data$DOB, data$EOD, unit="days")/30.35
+    return(cdc_age_month)
+}
+
+Score_zBMI <- function(data, wt="WeightLB", ht = "HeightIN", 
+                       wt_unit = "lb", ht_unit = "in", 
+                       cdc_age_month = "cdc_age_month", gender = "Gender"){
+    
+    # non-infant: calculate BMI as usual
+    data <- Score_BMI_Adults(data, wt, ht, wt_unit, ht_unit)
+    
+    # missing age: BMI category will not be known
+    data[,"AgeMonths"] <- data[,cdc_age_month]
+    data_age0 <- subset(data, is.na(data[,"AgeMonths"]))
+    data_age1 <- subset(data, !is.na(data[,"AgeMonths"]))
+    data_age0$BMI_Category <- NA
+    
+    # missing gender: will try 
+    data[,"Gender"] <- data[,gender]
+    data_gender0 <- subset(data_age1, is.na(data[,"Gender"]))
+    data_gender1 <- subset(data_age1, !is.na(data[,"Gender"]))
+    
+    # determine BMI category
+    load("data/BMI_Percentiles.RData")
+    data_gender1 <- merge(data_gender1, BMI_Percentiles, by=c("Gender", "AgeMonths"), by.x=TRUE, by.y=FALSE)
+    data_gender1$BMI_Category <- ifelse(data_gender1$BMI<data_gender1$P5, "Underweight",
+                                        ifelse(data_gender1$BMI<data_gender1$P85, "Healthy Weight",
+                                               ifelse(data_gender1$BMI<data_gender1$P95, "Overweight","Obesity")))
+    
+    data_gender0_M <- merge(data_gender0, BMI_Percentiles["Gender"=="M",], by=c("AgeMonths"), by.x=TRUE, by.y=FALSE)
+    data_gender0_F <- merge(data_gender0, BMI_Percentiles["Gender"=="F",], by=c("AgeMonths"), by.x=TRUE, by.y=FALSE)
+    data_gender0_M$BMI_Category_M <- ifelse(data_gender0_M$BMI<data_gender1$P5, "Underweight",
+                                            ifelse(data_gender0_M$BMI<data_gender1$P85, "Healthy Weight",
+                                                   ifelse(data_gender0_M$BMI<data_gender1$P95, "Overweight","Obesity")))
+    data_gender0_F$BMI_Category_F <- ifelse(data_gender0_F$BMI<data_gender1$P5, "Underweight",
+                                            ifelse(data_gender0_F$BMI<data_gender1$P85, "Healthy Weight",
+                                                   ifelse(data_gender0_F$BMI<data_gender1$P95, "Overweight","Obesity")))
+    data_gender0 <- merge(data_gender0_M, data_gender0_F[,BMI_Category_F], by.x = 0, by.y = 0)
+    data_gender0$BMI_Category <- ifelse(BMI_Category_M==BMI_Category_F, BMI_Category_M, NA)
+    data_gender0$BMI_Category_F <- NULL
+    data_gender0$BMI_Category_M <- NULL
+    
+    # join back
+    data_gender <- rbind(data_gender1, data_gender0)
+    data <- rbind(data_age0,data_gender)
+    return(data)
+}
+
+Score_BMI <- function(data, wt = "WeightLB", ht = "HeightIN", 
+                      wt_unit = "lb", ht_unit = "in", 
+                      birth_date = NULL, data_date = NULL, gender = NULL){
+    
+    if(is.null(birth_date)){
+        
+        warning(paste("Age not available. All records assumed to be adults."))
+        data <- Score_BMI_Adults(data, wt, ht, wt_unit, ht_unit)
+        
+    } else { # assume at least some kids; age must be available (if missing, BMI category cannot be computed)
+        
+        # compute age
+        data$cdc_age_month <- CDC_AgeMonth_fromDOB(data, birth_date, data_date)
+        
+        # infants: BMI cannot be computed
+        data_infant <- subset(data, data$cdc_age_month<24)
+        num_infants <- NROW(data_infant)
+        if(num_infants>0){
+            warning(paste("BMI cannot be computed for", num_infants, "infants in the data."))
+        }
+        
+        # adults & children, use adult calculator
+        data_noninfant <- subset(data, data$cdc_age_month>=24)
+        data_noninfant <- Score_BMI_Adults(data_noninfant, wt, ht, wt_unit, ht_unit)
+        
+        # separate adults and children
+        data_adults <- subset(data_noninfant, data$cdc_age_month>240.5)
+        data_children <- subset(data_noninfant, data$cdc_age_month<=240.5)
+        
+        # adults score as usual
+        data_adults <- Score_BMI_Adults(data_adults, wt, ht, wt_unit, ht_unit)
+        
+        # children need to check age and gender group
+        data_children <- Score_zBMI(data_children, wt, ht, wt_unit, ht_unit, 
+                                    cdc_age_month = "cdc_age_month", gender)
+        data <- rbind(data_adults, data_children)
+        
+        data_infant$BMI <- NA
+        data_infant$BMI_Category <- NA
+        data <- rbind(data_infant, data)
+        
+    }
     return(data)
 }
