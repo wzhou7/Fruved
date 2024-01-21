@@ -25,7 +25,8 @@ Check specific instrument pages for details about each available function.
 # Which Instruments Are Included?
 
 This `Fruved` package includes the following instruments: 
-* [Body Mass Index](BMI.md) (BMI) and Growth Chart Standardized BMI (zBMI)
+* [Body Mass Index](BMI.md) (BMI)
+* [Growth Chart Standardized BMI (zBMI)] (zBMI)
 * [Cohen's 14-Item Stress Scale](Stress14.md)
 * [International Physical Activity Questionnaire](IPAQ.md) (IPAQ)
 * [Pittsburgh Sleep Quality Index](PSQI.md) (PSQI)
