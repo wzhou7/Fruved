@@ -1,4 +1,4 @@
-# sPSQI
+# Short Pittsburgh Sleep Quality Index (sPSQI)
 
 ## Introduction
 
