@@ -6,7 +6,7 @@ dsd
 
 changed something
 
-# Citation
+## Citation
 
 If you use the sPSQI instrument in your research, please cite the following paper:
 
