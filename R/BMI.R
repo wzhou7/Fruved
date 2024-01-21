@@ -1,4 +1,4 @@
-flag_plausible <- function(x, type="weight", min_plausible=2, max_plausible=800){
+flag_plausible <- function(x, type="weight", min_plausible=2.1, max_plausible=650){
     y <- rep("", length(x))
     y[is.na(x)] <- paste("missing", type)
     y[(!is.na(x))&(x<min_plausible)] <- paste("implausible",type,"(too low)")
@@ -35,7 +35,7 @@ ConvertWt <- function(data, wt = "WeightLB", wt_unit = "lb"){
             data$WeightKG <- data[,wt]
         }
         # flag implausible values and outliers
-        data$WeightFlag <- flag_plausible(data$WeightKG, "weight", min_plausible=2, max_plausible=800)
+        data$WeightFlag <- flag_plausible(data$WeightKG, "weight", min_plausible=2.1, max_plausible=650)
         data$WeightFlag <- flag_outlier(data$WeightKG, "weight", data$WeightFlag)
         return(data)
     } else {
@@ -53,7 +53,7 @@ ConvertHt <- function(data, ht = "HeightIN", ht_unit = "in"){
             data$HeightM <- data[,ht]
         }
         # flag implausible values and outliers
-        data$HeightFlag <- flag_plausible(data$HeightM, "height", min_plausible=0.5, max_plausible=3.0)
+        data$HeightFlag <- flag_plausible(data$HeightM, "height", min_plausible=0.556, max_plausible=2.72)
         data$HeightFlag <- flag_outlier(data$HeightM, "height", data$HeightFlag)
         return(data)
     } else {
@@ -80,7 +80,7 @@ Score_BMI <- function(data, wt="WeightLB", ht = "HeightIN", wt_unit = "lb", ht_u
     data$BMI <- data$WeightKG/data$HeightM/data$HeightM
     
     # flag implausible values and outliers
-    data$BMIFlag <- flag_plausible(data$BMI, "BMI", min_plausible=5, max_plausible=200)
+    data$BMIFlag <- flag_plausible(data$BMI, "BMI", min_plausible=6.7, max_plausible=251.1)
     data$BMIFlag <- flag_outlier(data$BMI, "BMI", data$BMIFlag)
     
     # categorize BMI

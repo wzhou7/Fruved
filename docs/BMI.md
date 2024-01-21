@@ -46,6 +46,19 @@ If you would like to convert the unit for the height and/or weight (without calc
 follow this example:
 
 ```
-data$WeightKG <- ConvertWt(data, wt = "WeightLB", wt_unit = "lb")
-data$HeightM <- ConvertHt(data, ht = "HeightIN", ht_unit = "in")
+data <- ConvertWt(data, wt = "WeightLB", wt_unit = "lb")
+data <- ConvertHt(data, ht = "HeightIN", ht_unit = "in")
 ```
+
+## Plausibility and Outlier Flags
+
+Any value outside of the recorded human range of height, weight, and BMI are flagged as implausible values. We followed such cutoff via Google search and Wikipedia (retrieved on 1/20/2024). 
+* Highest height (Robert Wadlow, 272.034 cm), see [List of Tallest People](https://en.wikipedia.org/wiki/List_of_tallest_people)
+* Lowest height (Chandra Bahadur Dangi, 54.6cm), see [List of the Verified Shortest People](https://en.wikipedia.org/wiki/List_of_the_verified_shortest_people)
+* Highest weight (Jon Brower Minnoch, peak weight = 650kg)
+* Lowest weight ([Luc¨ªa Z¨¢rate](https://en.wikipedia.org/wiki/Luc%C3%ADa_Z%C3%A1rate), 2.1kg)
+* Highest BMI (Eman Ahmed Abd El Aty, peak BMI = 251.1), see [List_of_Heaviest_People](https://en.wikipedia.org/wiki/List_of_heaviest_people)
+* Lowest BMI (6.7 kg/m2 reported in Suszko et al. (2022) Mortality in extremely low BMI anorexia nervosa patients - implications of gastrointestinal and endocrine system dysfunction. Psychiatr Pol. 2022 Feb 27;56(1):89-100. doi: 10.12740/PP/126233)
+
+For data with at least 30 non-missing values (height, weight, or BMI), we determine outliers and extreme outliers according to the boxplot rules. 
+
