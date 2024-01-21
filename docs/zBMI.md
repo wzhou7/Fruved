@@ -7,6 +7,7 @@ According to the [CDC website](https://www.cdc.gov/healthyweight/assessing/bmi/c
 for children and teens, the BMI categories are:
 
 | Weight Status Category | Percentile Range                                |
+| ---------------------- | ----------------------------------------------- |
 | Underweight            | Less than the 5th percentile                    |
 | Healthy Weight         | 5th percentile to less than the 85th percentile |
 | Overweight             | 85th to less than the 95th percentile           |
