@@ -49,6 +49,8 @@ Note that this code assumes the birth date (`birth_date`) and
 the data collection date (`data_date`) will be used to determine age.
 Cases for which the age cannot be determined will have missing values in their BMI categories.
 
+TODO: add back age_calc {eeptools}
+
 ### Missing Gender
 
 It is possible gender can be missing from the data, while it is required for categorizing non-adults. 
