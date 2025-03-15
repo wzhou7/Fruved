@@ -1,0 +1,11 @@
+[
+    {"instrument": "BMI", "items": [
+        {"item": "heightCM", "type": "num", "min": 0, "max": 20000}, 
+        {"item": "weightKG", "type": "num", "min": 0, "max": 20000}
+    ]},
+    {"instrument": "zBMI", "items": [        
+        {"item": "heightCM", "type": "num", "min": 0, "max": 20000}, 
+        {"item": "weightKG", "type": "num", "min": 0, "max": 20000}, 
+        {"item": "ageMonths", "type": "num", "min": 0, "max": 20000}
+    ]}
+]
