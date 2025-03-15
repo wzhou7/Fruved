@@ -24,11 +24,22 @@ Check specific instrument pages for details about each available function.
 
 # Which Instruments Are Included?
 
-This `Fruved` package includes the following instruments: 
+This `Fruved` package includes the following instruments. 
+Click on the link to find a brief description and demonstrate its primary use.
 * [Body Mass Index](docs/BMI.md) (BMI)
 * [Growth Chart Standardized BMI](docs/zBMI.md) (zBMI)
-* [International Physical Activity Questionnaire](docs/IPAQ.md) (IPAQ)
 * [Pittsburgh Sleep Quality Index](docs/PSQI.md) (PSQI)
 * [Short Pittsburgh Sleep Quality Index](docs/sPSQI.md) (sPSQI)
 * [Cohen's 14-Item Stress Scale](docs/Stress14.md)
+* [International Physical Activity Questionnaire](docs/IPAQ.md) (IPAQ)
 * [10-Item Personality](docs/Personality.md)
+* [Healthy Eating Index (HEI)](docs/HEI.md) calculated from NDSR output
+* [Short Healthy Eating Index (sHEI)](docs/sHEI.md) 
+* NCI's [Dietary Screener Questionnaire (DSQ)](docs/DSQ.md)
+* NCI's [Percentage Energy from Fat Screener (FAT)](docs/FAT.md)
+* NCI's [Fruit & Vegetable Intake Screener (FV)](docs/FV.md)
+
+**Disclaimer:** This package is shared for your convenience. 
+While we make sincere efforts to make it correct, the code is provided as is. 
+Therefore, please use it at your own risk and make an effort to verify results. 
+Please [report any issues](https://github.com/wzhou7/Fruved/issues) or [send revision suggestions](https://github.com/wzhou7/Fruved/pulls).
