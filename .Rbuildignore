@@ -1,5 +1,0 @@
-*.Rproj*
-next_release*
-test*
-^.*\.Rproj$
-^\.Rproj\.user$
