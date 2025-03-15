@@ -1,6 +1,6 @@
 # What Is Fruved?
 
-This package consists of a few survey scoring tools for R users. The tools have been used for health and behaviorial studies associated with the [GetFruved](http://fruved.com/) project. 
+This package consists of a few survey scoring tools for R users. The tools have been used for health behavioral studies such as the GetFruved project. 
 
 # How to Use This Package?
 
@@ -26,11 +26,11 @@ Check specific instrument pages for details about each available function.
 
 This `Fruved` package includes the following instruments. 
 Click on the link to find a brief description and demonstrate its primary use.
-* [Body Mass Index](docs/BMI.md) (BMI)
-* [Growth Chart Standardized BMI](docs/zBMI.md) (zBMI)
+* CDC's [Body Mass Index](docs/BMI.md) (BMI)
+* CDC's [Growth Chart Standardized BMI](docs/zBMI.md) (zBMI)
 * [Pittsburgh Sleep Quality Index](docs/PSQI.md) (PSQI)
 * [Short Pittsburgh Sleep Quality Index](docs/sPSQI.md) (sPSQI)
-* [Cohen's 14-Item Stress Scale](docs/Stress14.md)
+* Cohen's [14-Item Stress Scale](docs/Stress14.md)
 * [International Physical Activity Questionnaire](docs/IPAQ.md) (IPAQ)
 * [10-Item Personality](docs/Personality.md)
 * [Healthy Eating Index (HEI)](docs/HEI.md) calculated from NDSR output
