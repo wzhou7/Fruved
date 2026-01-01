@@ -29,9 +29,7 @@ where `df_in` is the input data frame and `df_out` is the output data frame.
 
 In this step, we standardize the data formatting (variable naming and value encoding) to make it compatible with the official scoring code. 
 
-First, each record should be assigned a unique identifier `SEQN`.
-
-To score DSQ, two demographics variables are required:
+First, each record should be assigned a unique identifier `SEQN`. Two demographics variables are required:
 
 * `DSQ_xx1` : Age in years. Must be an integer and the acceptable range is 1-99.
 * `DSQ_xx2` : Are you male or female? `'A'` = Male; `'B'` = Female. Other values are not possible.
