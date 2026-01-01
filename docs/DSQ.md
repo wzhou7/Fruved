@@ -1,18 +1,16 @@
 # What Is DSQ?
 
-DSQ stands for Dietary Screener Questionnaires (DSQ), a 26-item survey instrument developed by NIH's [National Cancer Instritute](https://epi.grants.cancer.gov/nhanes/dietscreen/) (NCI). 
+Dietary Screener Questionnaires (DSQ) is a 26-item survey instrument developed by NIH's [National Cancer Instritute](https://epi.grants.cancer.gov/nhanes/dietscreen/) (NCI). 
 
-* Besides gender and age, it asks about the frequency of food group intake in the past month.
-Then, using a sophisticated algorithm, several food group intake amounts can be estimated.
+* Besides **gender** and **age**, it asks about the frequency of food group intake in the past month.
+Then, using an algorithm developed by NCI, several food group intake amounts can be estimated.
 
 * While [its official website]((https://epi.grants.cancer.gov/nhanes/dietscreen/)) provides [several versions of the questionaire](https://epi.grants.cancer.gov/nhanes/dietscreen/questionnaires.html), 
 we focus on the [Self-Administered Questionnaire: Paper](https://epi.grants.cancer.gov/nhanes/dietscreen/questionnaires.html#paper) version.
+We attempt to follow the questionaire's [codebook](https://epi.grants.cancer.gov/nhanes/dietscreen/dsq_codebook_teleform.docx) as much as possible.
 
-* The corresponding SAS programs are available on the [NIH NCI website](https://epi.grants.cancer.gov/nhanes/dietscreen/programs.html). 
-Here we provide a R version. We attempt to follow the questionaire's [codebook](https://epi.grants.cancer.gov/nhanes/dietscreen/dsq_codebook_teleform.docx) as much as possible. 
-
-* We implemented the [Earlier Methods](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/earlier/) as they were the version available when we started the GetFruved project. 
-The current method is also implemented now. Check DSQ2.
+* The official SAS programs are available on the [NIH NCI website](https://epi.grants.cancer.gov/nhanes/dietscreen/programs.html). Here we provide a translated R version.
+Similar to the official scoring methods, we implement both an [earlier method (PDF)](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/earlier/dietary-screener-questionnaire-earlier-methods-scoring-procedure-04082020.pdf) and a [current method](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/).
 
 ## Usage
 
