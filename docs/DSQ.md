@@ -52,62 +52,7 @@ The input data frame requires the following variables:
 
 ## Step 1. Prepare the Data
 
-We provide the following utility function in R to rename your variable names. 
-Please note that you still need to ensure that the [data encoding](DSQ_input.md) is correct for each variable.
 
-```
-data <- DSQ_Variables(data, UNIQUEID="ID",
-                      DSQ_xx1="Age",
-                      DSQ_xx2="Gender",
-                      DSQ_010="Dsqcereal",
-                      DSQ_020="Dsqcertyp1",
-                      DSQ_xx3="Dsqcertyp2",
-                      DSQ_030="Dsqmilk1",
-                      DSQ_040="Dsqsoda",
-                      DSQ_050="Dsqjuice",
-                      DSQ_060="Dsqcoffee",
-                      DSQ_070="Dsqdrink",
-                      DSQ_080="Dsqfruit",
-                      DSQ_090="Dsqsalad",
-                      DSQ_100="Dsqfried",
-                      DSQ_110="Dsqpotato",
-                      DSQ_120="Dsqbean",
-                      DSQ_130="Dsqveg",
-                      DSQ_140="Dsqpizza",
-                      DSQ_150="Dsqsalsa",
-                      DSQ_160="Dsqsauce",
-                      DSQ_190="Dsqcheese",
-                      DSQ_180="Dsqproc",
-                      DSQ_200="Dsqbread",
-                      DSQ_210="Dsqgrain",
-                      DSQ_220="Dsqcandy",
-                      DSQ_230="Dsqrolls",
-                      DSQ_240="Dsqcake",
-                      DSQ_250="Dsqice",
-                      DSQ_260="Dsqcorn")
-```
-
-Once you save the output data frame `data` in a standard data file (such as CSV), you can import it in SAS, and run the [official SAS scoring script](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/self.paper.zip).
-
-## Step 2. Run the Scoring Code
-
-The [scoring algorithms](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/) are well documented on its official website. 
-There is an earlier method and a current method. The current method is recommended. 
-Both methods have been implemented in [SAS](https://epi.grants.cancer.gov/nhanes/dietscreen/programs.html). 
-This package implements the [current method](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/) in R. 
-
-Once your data (encapsulated in data frame named `data`) is cleaned and formatted according to the official codebook, you can run this:
-
-```
-data_scored <- DSQ_Scores(data)
-```
-
-By default, the output data frame `data_scored` will only include the [computed variables](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/variables.html).
-
-
-# Example
-
-# Input and Output
 
 ## DSQ Input Data Formatting Requirements
 
@@ -180,6 +125,65 @@ The following food intake variables are collected but not used for scoring:
 * `DSQ_xx4` : what kind of milk did you usually drink
 * `DSQ_xx4os` : what kind of milk did you usually drink? Other Specify
 * `DSQ_170` : eat red meat, such as beef, pork, ham, or sausage? 
+
+
+We provide the following utility function in R to rename your variable names. 
+Please note that you still need to ensure that the [data encoding](DSQ_input.md) is correct for each variable.
+
+```
+data <- DSQ_Variables(data, UNIQUEID="ID",
+                      DSQ_xx1="Age",
+                      DSQ_xx2="Gender",
+                      DSQ_010="Dsqcereal",
+                      DSQ_020="Dsqcertyp1",
+                      DSQ_xx3="Dsqcertyp2",
+                      DSQ_030="Dsqmilk1",
+                      DSQ_040="Dsqsoda",
+                      DSQ_050="Dsqjuice",
+                      DSQ_060="Dsqcoffee",
+                      DSQ_070="Dsqdrink",
+                      DSQ_080="Dsqfruit",
+                      DSQ_090="Dsqsalad",
+                      DSQ_100="Dsqfried",
+                      DSQ_110="Dsqpotato",
+                      DSQ_120="Dsqbean",
+                      DSQ_130="Dsqveg",
+                      DSQ_140="Dsqpizza",
+                      DSQ_150="Dsqsalsa",
+                      DSQ_160="Dsqsauce",
+                      DSQ_190="Dsqcheese",
+                      DSQ_180="Dsqproc",
+                      DSQ_200="Dsqbread",
+                      DSQ_210="Dsqgrain",
+                      DSQ_220="Dsqcandy",
+                      DSQ_230="Dsqrolls",
+                      DSQ_240="Dsqcake",
+                      DSQ_250="Dsqice",
+                      DSQ_260="Dsqcorn")
+```
+
+Once you save the output data frame `data` in a standard data file (such as CSV), you can import it in SAS, and run the [official SAS scoring script](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/self.paper.zip).
+
+## Step 2. Run the Scoring Code
+
+The [scoring algorithms](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/) are well documented on its official website. 
+There is an earlier method and a current method. The current method is recommended. 
+Both methods have been implemented in [SAS](https://epi.grants.cancer.gov/nhanes/dietscreen/programs.html). 
+This package implements the [current method](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/) in R. 
+
+Once your data (encapsulated in data frame named `data`) is cleaned and formatted according to the official codebook, you can run this:
+
+```
+data_scored <- DSQ_Scores(data)
+```
+
+By default, the output data frame `data_scored` will only include the [computed variables](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/variables.html).
+
+
+# Example
+
+# Input and Output
+
 
 ## DSQ Output
 
