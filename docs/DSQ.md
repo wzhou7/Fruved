@@ -122,11 +122,6 @@ Once you save the output data frame `data` in a standard data file (such as CSV)
 
 ## Step 2. Run the Scoring Code
 
-The [scoring algorithms](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/) are well documented on its official website. 
-There is an earlier method and a current method. The current method is recommended. 
-Both methods have been implemented in [SAS](https://epi.grants.cancer.gov/nhanes/dietscreen/programs.html). 
-This package implements the [current method](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/) in R. 
-
 Once your data (a data frame named `data`) is cleaned and formatted, you can run this:
 
 ```
