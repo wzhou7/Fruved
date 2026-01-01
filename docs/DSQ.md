@@ -3,7 +3,7 @@
 Dietary Screener Questionnaires (DSQ) is a 26-item survey instrument developed by NIH's [National Cancer Instritute](https://epi.grants.cancer.gov/nhanes/dietscreen/) (NCI). 
 
 * Besides **gender** and **age**, it asks about the frequency of food group intake in the past month.
-Then, using an algorithm developed by NCI, several food group intake amounts can be estimated.
+Then, using an [algorithm developed by NCI]((https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/)), several food group intake amounts can be estimated.
 
 * While [its official website]((https://epi.grants.cancer.gov/nhanes/dietscreen/)) provides [several versions of the questionaire](https://epi.grants.cancer.gov/nhanes/dietscreen/questionnaires.html), 
 we focus on the [Self-Administered Questionnaire: Paper](https://epi.grants.cancer.gov/nhanes/dietscreen/questionnaires.html#paper) version.
