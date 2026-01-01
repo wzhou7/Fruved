@@ -4,8 +4,7 @@ This package consists of a few survey scoring tools for R users. The tools have 
 
 # How to Use This Package?
 
-To use this package, you will need the `devtools` library to install it from github. 
-For example, 
+To use this package, you will need the `devtools` library to install it from github. For example, 
 
 ```
 install.packages("devtools") # install devtools
@@ -13,8 +12,7 @@ library(devtools) # load devtools
 install_github("wzhou7/Fruved") # install Fruved
 ```
 
-The above code needs to be run just once.
-Then, you can load the `Fruved` package each time of use:
+The above code needs to be run just once. Then, you can load the `Fruved` package each time of use:
 
 ```
 library(Fruved) # load Fruved
@@ -24,8 +22,7 @@ Check specific instrument pages for details about each available function.
 
 # Which Instruments Are Included?
 
-This `Fruved` package includes the following instruments. 
-Click on the link to find a brief description and demonstrate its primary use.
+This package includes the following instruments. 
 * CDC's [Body Mass Index](docs/BMI.md) (BMI)
 * CDC's [Growth Chart Standardized BMI](docs/zBMI.md) (zBMI)
 * [Pittsburgh Sleep Quality Index](docs/PSQI.md) (PSQI)
