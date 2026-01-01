@@ -13,17 +13,7 @@ There are a few minor discrepancies between the codebook and the official scorin
 * The official SAS programs are available on the [NIH NCI website](https://epi.grants.cancer.gov/nhanes/dietscreen/programs.html). Here we provide a translated R version.
 Similar to the official scoring methods, we implement both an [earlier method (PDF)](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/earlier/dietary-screener-questionnaire-earlier-methods-scoring-procedure-04082020.pdf) and a [current method](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/).
 
-## Usage
-
-The basic usage is 
-
-```
-df_out <- DSQ_Score(df_in)
-```
-
-where `df_in` is the input data frame and `df_out` is the output data frame.
-
-# How to Score Your Data in R?
+# How to Score DSQ?
 
 ## Step 1. Prepare the Data
 
@@ -137,20 +127,10 @@ There is an earlier method and a current method. The current method is recommend
 Both methods have been implemented in [SAS](https://epi.grants.cancer.gov/nhanes/dietscreen/programs.html). 
 This package implements the [current method](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/) in R. 
 
-Once your data (encapsulated in data frame named `data`) is cleaned and formatted according to the official codebook, you can run this:
+Once your data (a data frame named `data`) is cleaned and formatted, you can run this:
 
 ```
 data_scored <- DSQ_Scores(data)
 ```
 
-By default, the output data frame `data_scored` will only include the [computed variables](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/variables.html).
-
-
-# Example
-
-# Input and Output
-
-
-## DSQ Output
-
-See [NCI website](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/variables.html).
+Explanation of the DSQ output can be found at the [NCI website](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/variables.html).
