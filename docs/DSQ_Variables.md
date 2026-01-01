@@ -1,11 +1,16 @@
 # DSQ Input Data Formatting
 
-First, each record should be assigned a unique identifier `SEQN`. Two demographics variables are required:
+First, two demographics variables are required:
 
 * `DSQ_xx1` : Age in years. Must be an integer and the acceptable range is 1-99.
 * `DSQ_xx2` : Are you male or female? `'A'` = Male; `'B'` = Female. Other values are not possible.
 
-The following cereal variables are collected:
+Then, the cereal variables may need special attention. See [codebook](https://epi.grants.cancer.gov/nhanes/dietscreen/dsq_codebook_teleform.docx)).
+
+* `DSQ_020` : During the past month, what kind of cereal did you usually eat? Choices are food codes from a cereal database.
+
+* `DSQ_xx3` : If there was another kind of cereal that you usually ate during the past month, what kind was it? Choices are the same as `DSQ_020`.
+
 * `DSQ_010` : During the past month, how often did you eat hot or cold cereals? Choices are:
   - `'A'` = Never 
   - `'B'` = 1 time last month 
@@ -16,10 +21,6 @@ The following cereal variables are collected:
   - `'G'` = 5-6 times per week 
   - `'H'` = 1 time per day 
   - `'I'` = 2 or more times per day.
-
-* `DSQ_020` : During the past month, what kind of cereal did you usually eat? Choices are food codes from a cereal database (see the appendix in the [codebook](https://epi.grants.cancer.gov/nhanes/dietscreen/dsq_codebook_teleform.docx)).
-
-* `DSQ_xx3` : If there was another kind of cereal that you usually ate during the past month, what kind was it? Choices are the same as `DSQ_020`.
 
 The following drinks are asked of their frequency during the past month. Choices are from `'A'` to `'K'`, as in `DSQ_030`.
 * `DSQ_030` : have any milk (either to drink or on cereal)? Choices are:
