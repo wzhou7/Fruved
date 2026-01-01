@@ -5,10 +5,9 @@ First, two demographics variables are required:
 * `DSQ_xx1` : Age in years. Must be an integer and the acceptable range is 1-99.
 * `DSQ_xx2` : Are you male or female? `'A'` = Male; `'B'` = Female. Other values are not possible.
 
-Then, the cereal variables may need special attention. See [codebook](https://epi.grants.cancer.gov/nhanes/dietscreen/dsq_codebook_teleform.docx)).
+Then, the cereal variables may need special attention. See [official codebook](https://epi.grants.cancer.gov/nhanes/dietscreen/dsq_codebook_teleform.docx).
 
-* `DSQ_020` : During the past month, what kind of cereal did you usually eat? Choices are food codes from a cereal database.
-
+* `DSQ_020` : During the past month, what kind of cereal did you usually eat? Choices are options from a cereal database, coded by index.
 * `DSQ_xx3` : If there was another kind of cereal that you usually ate during the past month, what kind was it? Choices are the same as `DSQ_020`.
 
 * `DSQ_010` : During the past month, how often did you eat hot or cold cereals? Choices are:
