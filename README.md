@@ -30,11 +30,11 @@ This package includes the following instruments.
 * Cohen's [14-Item Stress Scale](docs/Stress14.md)
 * [International Physical Activity Questionnaire](docs/IPAQ.md) (IPAQ)
 * [10-Item Personality](docs/Personality.md)
-* [Healthy Eating Index (HEI)](docs/HEI.md) calculated from NDSR output
-* [Short Healthy Eating Index (sHEI)](docs/sHEI.md) 
-* NCI's [Dietary Screener Questionnaire (DSQ)](docs/DSQ.md)
-* NCI's [Percentage Energy from Fat Screener (FAT)](docs/FAT.md)
-* NCI's [Fruit & Vegetable Intake Screener (FV)](docs/FV.md)
+* [Healthy Eating Index](docs/HEI.md) (HEI) calculated from NDSR output
+* [Short Healthy Eating Index](docs/sHEI.md) (sHEI)
+* NCI's [Dietary Screener Questionnaire](docs/DSQ.md) (DSQ)
+* NCI's [Percentage Energy from Fat Screener](docs/FAT.md) (FAT)
+* NCI's [Fruit & Vegetable Intake Screener](docs/FV.md) (FV)
 
 **Disclaimer:** This package is shared for your convenience. 
 While we make sincere efforts to make it correct, the code is provided as is. 
