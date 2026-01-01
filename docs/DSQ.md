@@ -8,6 +8,7 @@ Then, using an algorithm developed by NCI, several food group intake amounts can
 * While [its official website]((https://epi.grants.cancer.gov/nhanes/dietscreen/)) provides [several versions of the questionaire](https://epi.grants.cancer.gov/nhanes/dietscreen/questionnaires.html), 
 we focus on the [Self-Administered Questionnaire: Paper](https://epi.grants.cancer.gov/nhanes/dietscreen/questionnaires.html#paper) version.
 We attempt to follow the questionaire's [codebook](https://epi.grants.cancer.gov/nhanes/dietscreen/dsq_codebook_teleform.docx) as much as possible.
+There are a few minor discrepancies between the codebook and the official scoring code (see details below). In those cases, we follow the requirement of the official scoring code. 
 
 * The official SAS programs are available on the [NIH NCI website](https://epi.grants.cancer.gov/nhanes/dietscreen/programs.html). Here we provide a translated R version.
 Similar to the official scoring methods, we implement both an [earlier method (PDF)](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/earlier/dietary-screener-questionnaire-earlier-methods-scoring-procedure-04082020.pdf) and a [current method](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/).
@@ -129,7 +130,7 @@ data <- DSQ_Variables(data, UNIQUEID="ID",
                       DSQ_260="Dsqcorn")
 ```
 
-Once you save the output data frame `data` in a standard data file (such as CSV), you can import it in SAS, and run the [official SAS scoring script](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/self.paper.zip).
+Once you save the output data frame `data` in a standard data file (such as CSV), you can import it in SAS, and run the official SAS scoring script.
 
 ## Step 2. Run the Scoring Code
 
