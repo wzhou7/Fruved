@@ -22,41 +22,11 @@ df_out <- DSQ_Score(df_in)
 
 where `df_in` is the input data frame and `df_out` is the output data frame.
 
-### Input Variables
-
-The input data frame requires the following variables:
-
-| Fruved Data Dictionary | SAS Variable | Choice | Score |   |
-|------------------------|--------------|--------|-------|---|
-| Age                    |              |        |       |   |
-| Gender                 |              |        |       |   |
-|                        |              |        |       |   |
-
-### Output Variables
-
-| Fruved Data Dictionary | SAS Variable | Choice | Score |   |
-|------------------------|--------------|--------|-------|---|
-| Age                    |              |        |       |   |
-| Gender                 |              |        |       |   |
-|                        |              |        |       |   |
-
-## To-Do
-
-* Read the CSV files in the folder "nhanes.dietvars.excel.0212-2013" before running the scoring code
-* The "gender" variable coding: 1 = male; 2 = female
-* The "AGE" variable should be an integer measured in year
-
 # How to Score Your Data in R?
 
 ## Step 1. Prepare the Data
 
-
-
-## DSQ Input Data Formatting Requirements
-
-Our scoring code is based on the [Self-Administered Questionnaire: Paper](https://epi.grants.cancer.gov/nhanes/dietscreen/questionnaires.html#paper) version and we followed its [codebook](https://epi.grants.cancer.gov/nhanes/dietscreen/dsq_codebook_teleform.docx) to the extent possible. 
-There are a few discrepancies between the codebook and the official scoring code (see details below). In those cases, we follow the requirement of the official scoring code. 
-This documentation summarizes the variable naming and value encoding requirements we implemented.
+In this step, we standardize the data formatting (variable naming and value encoding) to make it compatible with the official scoring code. 
 
 First, each record should be assigned a unique identifier `SEQN`.
 
@@ -123,7 +93,6 @@ The following food intake variables are collected but not used for scoring:
 * `DSQ_xx4` : what kind of milk did you usually drink
 * `DSQ_xx4os` : what kind of milk did you usually drink? Other Specify
 * `DSQ_170` : eat red meat, such as beef, pork, ham, or sausage? 
-
 
 We provide the following utility function in R to rename your variable names. 
 Please note that you still need to ensure that the [data encoding](DSQ_input.md) is correct for each variable.
