@@ -11,7 +11,7 @@ We attempt to follow the questionaire's [codebook](https://epi.grants.cancer.gov
 There are a few minor discrepancies between the codebook and the official scoring code (see details below). In those cases, we follow the requirement of the official scoring code. 
 
 * The official SAS programs are available on the [NIH NCI website](https://epi.grants.cancer.gov/nhanes/dietscreen/programs.html). Here we provide a translated R version.
-Similar to the official scoring methods, we implement both an [earlier method (PDF)](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/earlier/dietary-screener-questionnaire-earlier-methods-scoring-procedure-04082020.pdf) and a [current method](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/).
+Similar to the official scoring methods, here we focus on implementing the [current method](https://epi.grants.cancer.gov/nhanes/dietscreen/scoring/current/).
 
 # How to Score DSQ?
 
