@@ -18,7 +18,6 @@ Similar to the official scoring methods, here we focus on implementing the [curr
 ## Step 1. Prepare the Data
 
 In this step, we standardize the data formatting (variable naming and value encoding) to make it compatible with the official scoring code. 
-
 We provide the following utility function in R to rename your variable names. 
 Please note that you still need to ensure that the [data encoding](DSQ_Variables.md) is correct for each variable.
 
