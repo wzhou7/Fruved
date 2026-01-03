@@ -56,7 +56,7 @@ data <- DSQ_Variables(data, UNIQUEID="ID",
 
 Once you save the output data frame `data` in a standard data file (such as CSV), you can import it in SAS, and run the official SAS scoring script.
 
-## Step 2. Run the Scoring Code
+## Step 2. Run the Scoring Code in R
 
 Once your data (a data frame named `data`) is cleaned and formatted, you can run this:
 
